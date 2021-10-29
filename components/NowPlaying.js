@@ -11,7 +11,7 @@ export default function NowPlaying() {
         <Tooltip />
         <div className="box-border flex h-12 border border-cool-gray-700 rounded-xl relative overflow-hidden w-max">
           {data?.albumCover &&
-            <img className="relative max-h-full" src={data.albumCover.url} alt={`${data.album} cover`}  />
+            <img className="relative max-h-full" height="64" width="auto" src={data?.albumCover.url} alt={`${data.album} cover`}  />
           }
           <div className="flex flex-col my-auto">
             <span className="text-xs text-cool-gray-400 text-center">I&apos;m listening to:</span>

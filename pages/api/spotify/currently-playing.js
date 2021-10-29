@@ -16,13 +16,14 @@ const currentlyPlaying = async (_, res) => {
   } 
   
   if (items.currently_playing_type === 'track') {
+    console.log(items.item.album.images[2])
     const relativeProgress = Math.round((100 * items.progress_ms) / items.item.duration_ms)
     return res.status(200).json({ 
       title: items.item.name,
       album: items.item.album.name,
       artists: items.item.artists,
       link: items.item.external_urls.spotify,
-      albumCover: items.item.album.images[1],
+      albumCover: items.item.album.images[2],
       length: items.item.duration_ms/5,
       progress: items.progress_ms/5,
       relativeProgress: relativeProgress
