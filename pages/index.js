@@ -1,82 +1,47 @@
 import Head from 'next/head'
+import Button from '../components/Button.js'
+import Spacer from '../components/Spacer.js'
+import BaseContainer from '../components/Containers/BaseContainer'
+import Footer from '../components/Footer.js'
+import HeroItemLink from '../components/HeroItemLink'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="text-white flex-col items-center justify-center min-h-screen bg-black">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Lachlan Kemp – Developer, Javascript enthusiast, person.</title>
+        <meta name="description" content="A person focusing on, Javascript, React, Svelte and new technologies." />
+        <link rel="canonical" href="https://lachlankemp.com/" />
       </Head>
+      <BaseContainer>
+      <div className="px-3 mx-auto flex flex-col">
+        <div className="sm:pt-[15%] sm:pb-[40%] pt-[5%] pb-[60%] flex-grow">
+        <span className="text-cool-gray-600 invisible sm:visible cursor-default" data-tip="Down there!">[Hover over items]</span>
+          <h1 className="cursor-default transition-colors duration-700 text-gray-400 text-4xl sm:text-5xl md:text-6xl font-bold leading-normal">
+            <div className="inline-block" data-tip="To my resume 📄">
+              <HeroItemLink link="/work/resume/developer" newTab={false} colorClass="sm:text-gray-400 sm:hover:text-green-400 text-green-400" name="Lachlan Kemp"/>
+            </div>
+            
+            <span>&nbsp;is a person focusing on,&nbsp;</span>
+            <div className="inline-block" data-tip="To a GitHub project">
+              <HeroItemLink newTab={true} link="https://GitHub.com/widelachie/RefTracker" colorClass="sm:text-gray-400 sm:hover:text-yellow-400 text-yellow-400" name="Javascript"/>
+            </div>
+            <span>,&nbsp;</span>
+            <div className="inline-block" data-tip="To a GitHub project">
+              <HeroItemLink newTab={true} link="https://GitHub.com/widelachie/LiveAtSpace-V2" colorClass="sm:text-gray-400 sm:hover:text-blue-400 text-blue-400" name="React"/>
+            </div>
+            <span>,&nbsp;</span>
+            <div className="inline-block" data-tip="To a GitHub project">
+              <HeroItemLink newTab={true} link="https://GitHub.com/widelachie/SwagChatv5" colorClass="sm:text-gray-400 sm:hover:text-orange-400 text-orange-400" name="Svelte"/>
+            </div>
+            <span> and new technologies.</span>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          </h1>
         </div>
-      </main>
+        {/*<Footer />*/}
+      </div>
+      </BaseContainer>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
     </div>
   )
 }

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .italicLink {
+    @apply inline-block cursor-pointer transform transition-all hover:-skew-x-12;
+  }
+  .active--headerLink {
+    @apply text-cool-gray-400;
+  }
+
+}
+.artists>li::after {
+  content: ",";
+}
+.artists>li:last-child::after {
+  content: "";
+}
+.song-progress::-moz-progress-bar {
+  @apply bg-blue-400
+}
+.song-progress::-webkit-progress-value {
+  @apply bg-blue-400
+}
+.song-progress::-webkit-progress-bar {
+  @apply bg-cool-gray-700
+}
