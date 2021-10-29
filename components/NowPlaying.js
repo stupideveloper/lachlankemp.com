@@ -1,5 +1,4 @@
 import useSWR from "swr"
-import Image from 'next/image'
 import fetcher from '../lib/fetcher'
 import Tooltip from "./Decorations/Tooltip"
 export default function NowPlaying() {
