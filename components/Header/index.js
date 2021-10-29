@@ -33,7 +33,7 @@ export default function Header() {
     </div>
     <div className={`${open ? 'visible opacity-100 h-auto' : 'hidden opacity-0 md:opacity-100 h-[50px] md:h-auto'} relative transition-all md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0 block md:space-x-0.5`}>
       <HeaderItem url={"/"} pathNameMatch={"/"}  pathName={router.pathname}>Home</HeaderItem>
-      <HeaderItem url={"/work/resume/developer"} pathNameMatch={"/work/resume/[id]"}  pathName={router.pathname}>Resume</HeaderItem>
+      <HeaderItem url={"/work/resume/developer"} pathNameMatch={"/work/resume/developer"}  pathName={router.pathname}>Resume</HeaderItem>
       <HeaderItem url={"https://social.lachlankemp.com/gh"} pathNameMatch={""}  pathName={router.pathname}>GitHub</HeaderItem>
       <HeaderItem url={"/contact"} pathNameMatch={"/contact"} pathName={router.pathname}>Contact</HeaderItem>
     </div>
