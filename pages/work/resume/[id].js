@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { getAllResumesPath, getResumeData } from '../../../lib/getResumedata';
+import { getAllResumesPath, getResumeData } from '../../../lib/getResumedata.js';
 import BaseContainer from '../../../components/Containers/BaseContainer'
 
 const components = {
