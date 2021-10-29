@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
 @layer components {
   .italicLink {
     @apply inline-block cursor-pointer transform transition-all hover:-skew-x-12;
