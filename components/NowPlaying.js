@@ -1,4 +1,5 @@
 import useSWR from "swr"
+import Image from 'next/image'
 import fetcher from '../lib/fetcher'
 import Tooltip from "./Decorations/Tooltip"
 export default function NowPlaying() {
@@ -14,7 +15,7 @@ export default function NowPlaying() {
             <img className="relative max-h-full" src={data.albumCover.url} alt={`${data.album} cover`}  />
           }
           <div className="flex flex-col my-auto">
-            <span className="text-xs text-cool-gray-400 text-center">I'm listening to:</span>
+            <span className="text-xs text-cool-gray-400 text-center">I&apos;m listening to:</span>
             <div className="flex items-center text-cool-gray-300 mx-3">
               {data?.title &&
                 <span className="font-bold">{data.title}</span>

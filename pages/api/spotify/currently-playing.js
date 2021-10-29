@@ -1,7 +1,8 @@
 import { getCurrentlyPlaying } from '../../../lib/spotify';
 
-export default async (_, res) => {
+const currentlyPlaying = async (_, res) => {
   const response = await getCurrentlyPlaying();
+  console.log(response.status)
   if(response.status === 204) {
     return res.status(200)
   }
@@ -29,3 +30,4 @@ export default async (_, res) => {
   }
   
 };
+export default currentlyPlaying
