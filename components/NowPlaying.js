@@ -2,7 +2,7 @@ import useSWR from "swr"
 import fetcher from '../lib/fetcher'
 import Tooltip from "./Decorations/Tooltip"
 export default function NowPlaying() {
-  const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { refreshInterval: 30000 })
+  const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { refreshInterval: 60000 })
 
   if (error) {console.error(error)}
   return (
