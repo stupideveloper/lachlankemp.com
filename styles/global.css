@@ -8,7 +8,6 @@
   .active--headerLink {
     @apply text-cool-gray-400;
   }
-
 }
 .artists>li::after {
   content: ",";
@@ -17,11 +16,25 @@
   content: "";
 }
 .song-progress::-moz-progress-bar {
-  @apply bg-blue-400
+  @apply bg-blue-400;
 }
 .song-progress::-webkit-progress-value {
-  @apply bg-blue-400
+  @apply bg-blue-400;
 }
 .song-progress::-webkit-progress-bar {
-  @apply bg-cool-gray-700
+  @apply bg-cool-gray-700;
+}
+.scroll-text {
+  /* animation properties */
+  transform: translateX(100%);
+
+  animation: scroll 20s linear infinite;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
