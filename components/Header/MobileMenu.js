@@ -70,10 +70,10 @@ export default function MobileMenu() {
           exit="exit" 
           variants={variants} 
           className={` font-bold absolute h-screen w-full left-0 bg-white dark:bg-black mt-2 z-50 px-4 py-6`}>
-            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="/"><a className={"p-3 block"}>Home</a></Link></motion.li>
-            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="/work/resume/developer"><a className={"p-3 block"}>Resume</a></Link></motion.li>
-            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="https://social.lachlankemp.com/gh"><a className={"p-3 block"}>GitHub</a></Link></motion.li>
-            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400  "}><Link href="/contact"><a className={"p-3 block"}>Contact</a></Link></motion.li>
+            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="/"><a onClick={toggleOpen} className={"p-3 block"}>Home</a></Link></motion.li>
+            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="/work/resume/developer"><a onClick={toggleOpen} className={"p-3 block"}>Resume</a></Link></motion.li>
+            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="https://social.lachlankemp.com/gh"><a onClick={toggleOpen} className={"p-3 block"}>GitHub</a></Link></motion.li>
+            <motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400  "}><Link href="/contact"><a onClick={toggleOpen} className={"p-3 block"}>Contact</a></Link></motion.li>
             <motion.li variants={item} className={"p-3 w-min"}><ThemeToggle /></motion.li>
           </motion.ul>
         }
