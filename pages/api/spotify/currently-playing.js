@@ -1,4 +1,4 @@
-import { getCurrentlyPlaying } from '../../../lib/spotify';
+import { getCurrentlyPlaying } from '/lib/spotify';
 
 const currentlyPlaying = async (_, res) => {
   const response = await getCurrentlyPlaying();
@@ -27,6 +27,6 @@ const currentlyPlaying = async (_, res) => {
       relativeProgress: relativeProgress
     });
   }
-  
+  return res.status(500)
 };
 export default currentlyPlaying

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import BaseContainer from '../../../components/Containers/BaseContainer'
+import BaseContainer from '/components/Containers/BaseContainer'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 
@@ -14,7 +14,7 @@ me@lachlankemp.com
 ## Experience & Activities
 
 ### First Robotics
-Worked collaboratively in a fast paced, 20 member team to develop and drive an advanced nationally recognised [FIRST Robotics](https://www.firstinspires.org/robotics/frc) robot using metal manufacturing and custom robot software.
+Worked collaboratively in a fast paced, 20 member team to develop and drive an advanced nationally recognised [FIRST Robotics](https://www.firstinspires.org/robotics/frc) robot.
 
 ### Vex Robotics
 Created a VEX robot in a small, tight-nit group to develop a globally competitive robotics platform.
@@ -27,8 +27,7 @@ Has developed numerous Javascript, React and Svelte Based applications (found on
 - NodeJS
 - Git Management
 - Adobe Creative Cloud Suite (includes: AI, PS, ID)
-- Accepting constructive criticism
-- Collaboration in teams
+- Collaboration in small teams 
 - Problem-solving within a group
 
 For a far more detailed resume, contact me at me@lachlankemp.com
@@ -37,13 +36,13 @@ For a far more detailed resume, contact me at me@lachlankemp.com
 
 export default function TestPage() {
   return (
-    <div className="text-white flex-col items-center justify-center min-h-screen bg-black">
+    <div className="dark:text-white dark:bg-black flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Dev Resume | Lachlan Kemp</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BaseContainer>
-        <div className = 'prose pt-7'>
+        <div className = 'prose dark:prose-dark pt-7'>
           <ReactMarkdown>{markdown}</ReactMarkdown>
         </div>
       </BaseContainer>
