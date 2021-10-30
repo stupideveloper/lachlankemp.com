@@ -2,14 +2,13 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       typography: (theme) => ({
-        DEFAULT: {
+        dark: {
           css: {
-            color: theme('colors.gray.300'),
-
+            color: theme('colors.cool-gray.300'),
             h1: {
               color: theme('colors.cool-gray.300')
             },
@@ -23,7 +22,8 @@ module.exports = {
               color: theme('colors.blue.600')
             }
           },
-        },
+        }
+
       }),
     },
     colors: {

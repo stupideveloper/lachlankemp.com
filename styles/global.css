@@ -5,13 +5,20 @@
 :root {
   color-scheme: dark;
 }
-
+@layer base {
+  h1 {
+    @apply dark:text-cool-gray-300 text-cool-gray-700 font-extrabold	
+  }
+}
 @layer components {
   .italicLink {
     @apply inline-block cursor-pointer transform transition-all hover:-skew-x-12;
   }
   .active--headerLink {
     @apply text-cool-gray-400;
+  }
+  .footer--item {
+    @apply text-cool-gray-700 hover:text-cool-gray-500 dark:text-cool-gray-400 dark:hover:text-cool-gray-600 p-2 pl-0
   }
 }
 .artists>li::after {
@@ -21,13 +28,13 @@
   content: "";
 }
 .song-progress::-moz-progress-bar {
-  @apply bg-blue-400;
+  @apply dark:bg-blue-400 bg-blue-600;
 }
 .song-progress::-webkit-progress-value {
-  @apply bg-blue-400;
+  @apply dark:bg-blue-400 bg-blue-600;
 }
 .song-progress::-webkit-progress-bar {
-  @apply bg-cool-gray-700;
+  @apply dark:bg-cool-gray-700 bg-cool-gray-400;
 }
 .scroll-text {
   /* animation properties */

@@ -8,7 +8,7 @@ export default function BaseContainer({children}) {
       <Header />
 
       <div className={styles.wrapper}>
-        <div className="flex-grow m-4 mb-4">
+        <div className="flex-grow sm:py-4 sm:px-4 py-4 px-8">
           {children}
         </div>
         <div className="">
