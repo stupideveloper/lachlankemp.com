@@ -2,6 +2,7 @@ import Head from 'next/head'
 import BaseContainer from '/components/Containers/BaseContainer'
 import HeroItemLink from '/components/HeroItemLink'
 import BaseLayout from '/components/Containers/BaseLayout'
+import Subscribe from '/components/Subscribe'
 
 export default function Home() {
   return (
@@ -35,10 +36,9 @@ export default function Home() {
 
           </h1>
         </div>
-        {/*<Footer />*/}
       </div>
+      <Subscribe />
       </BaseContainer>
-
     </BaseLayout>
   )
 }

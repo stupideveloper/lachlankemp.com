@@ -101,8 +101,8 @@ export default function Test() {
                 </table>
                 <h4 className="mt-3 font-bold">Email:</h4>
                 <a href="mailto:me@lachlankemp.com">me@lachlankemp.com</a>
-                <h4 className="mt-3 font-bold">Buisness Inquiries:</h4>
-                <a href="mailto:hello@nomical-labs.com">hello@nomical-labs.com</a>
+                {/*<h4 className="mt-3 font-bold">Buisness Inquiries:</h4>
+                <a href="mailto:hello@nomical-labs.com">hello@nomical-labs.com</a>*/}
               </div>
             </div>
           </BaseContainer>
