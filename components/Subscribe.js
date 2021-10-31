@@ -63,9 +63,11 @@ export default function Subscribe() {
 	};
 
 	return (
-		<motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={varients}>
+		<>
 			{!isSubscribed &&
-        <div className="bg-cool-gray-100 dark:bg-cool-gray-900 p-4 rounded-lg">
+		<motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={varients}>
+			
+			<div className="bg-cool-gray-100 dark:bg-cool-gray-900 p-4 rounded-lg">
         	<p className="text-xl font-bold">Subscribe to the newsletter</p>
         	<p className="mt-1 mb-4 dark:text-cool-gray-300" >Get emails from me about web development, tech, and early access to my new projects.</p>
         	{!message && 
@@ -106,8 +108,10 @@ export default function Subscribe() {
               </div>
         		}
         	</div>
-        </div>
-			}
+			</div>
+			
 		</motion.div>
+			}
+		</>
 	);
 }
