@@ -78,8 +78,8 @@ export default function Subscribe() {
             {message ? message : ``}
             {!message &&
               <div>
-                <p>I'll only send emails when new content is posted. No spam and a maximum of 1 email a month.</p>
-                <p>PS. If you sign up, you'll never see this window again 👍.</p>
+                <p>I&apos;ll only send emails when new content is posted. No spam and a maximum of 1 email a month.</p>
+                <p>PS. If you sign up, you&apos;ll never see this window again 👍.</p>
               </div>
             }
           </div>
