@@ -7,7 +7,7 @@ export default function Test() {
 			<Head>
 				<title>Contact – Lachlan Kemp</title>
 				<meta name="description" content="A person focusing on, Javascript, React, Svelte and new technologies." />
-				<link rel="canonical" href="https://lachlankemp.com/" />
+				<link rel="canonical" href="https://lachlankemp.com/contact" />
 			</Head>
 			<BaseContainer>
 				<div>

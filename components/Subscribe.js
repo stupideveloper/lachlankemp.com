@@ -1,15 +1,41 @@
 import React, { useRef, useState, useEffect } from 'react';
-
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 export default function Subscribe() {
 	const inputEl = useRef(null);
 	const [message, setMessage] = useState('');
 	const [isSubscribed, setisSubscribed] = useState(false);
+
+	const controls = useAnimation();
+	const { ref, inView } = useInView({
+		threshold: 0.3,
+		delay: 200
+	});
+
 	useEffect(() => {
 		if (window.localStorage.getItem('isSubscribed')) {
 			console.log('Already Subscribed');
 			setisSubscribed(true);
 		}
 	}, []);
+	useEffect(() => {
+		if (inView) {
+			controls.start('visible');
+		}
+		if (!inView) {
+			controls.start('hidden');
+		}
+	}, [controls, inView]);
+	const varients = {
+		hidden: { opacity: 0, scale: 0.7},
+		visible: {
+			scale: 1, 
+			opacity: 1,
+			transition: {
+				duration: 0.3
+			}
+		}
+	}
 
 	const subscribe = async (e) => {
 		e.preventDefault();
@@ -27,28 +53,25 @@ export default function Subscribe() {
 		const { error } = await res.json();
 
 		if (error) {
-			// 4. If there was an error, update the message in state.
 			setMessage(error);
-
 			return;
 		}
 
-		// 5. Clear the input value and show a success message.
 		inputEl.current.value = '';
 		setMessage('Success, you are now subscribed to the newsletter, you wont regret it! 🎉');
 		window.localStorage.setItem('isSubscribed', true);
 	};
 
 	return (
-		<>
+		<motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={varients}>
 			{!isSubscribed &&
         <div className="bg-cool-gray-100 dark:bg-cool-gray-900 p-4 rounded-lg">
         	<p className="text-xl font-bold">Subscribe to the newsletter</p>
-        	<p className="mb-4" >Get emails from me about web development, tech, and early access to my new projects.</p>
+        	<p className="mt-1 mb-4 dark:text-cool-gray-300" >Get emails from me about web development, tech, and early access to my new projects.</p>
         	{!message && 
             <form onSubmit={subscribe}>
             	<div className="max-w-md">
-            		<div className="flex mb-2">
+            		<div className="md:flex block md:space-x-2 space-x-0 mb-2">
             			<input
             				type="email"
             				className="
@@ -66,7 +89,7 @@ export default function Subscribe() {
             				ref={inputEl}
             				required
             			/>
-            			<><button className="font-bold px-4 transition bg-cool-gray-300 hover:bg-cool-gray-400 dark:bg-cool-gray-600 ml-2 rounded-lg" type="submit">Subscribe</button></>
+            			<><button className="font-bold px-4 transition bg-cool-gray-300 hover:bg-cool-gray-400 dark:bg-cool-gray-600 rounded-lg py-2 sm:mt-0 mt-2" type="submit">Subscribe</button></>
 
             		</div>
 
@@ -85,6 +108,6 @@ export default function Subscribe() {
         	</div>
         </div>
 			}
-		</>
+		</motion.div>
 	);
 }
