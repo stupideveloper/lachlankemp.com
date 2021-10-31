@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import NowPlaying from './NowPlaying'
+import Link from 'next/link';
+import NowPlaying from './NowPlaying';
 
 export default function Footer() {
   return (
@@ -17,5 +17,5 @@ export default function Footer() {
       <p className="text-cool-gray-400">© {(new Date().getFullYear())} Lachlan Kemp</p>
       <p className="text-cool-gray-400 pb-4 text-sm">*Please keep in mind this website is new and is likely full of bugs. If you spot one, <a href="mailto:me@lachlankemp.com" className="text-blue-700 dark:text-blue-400">email</a> me.</p>
     </footer>
-  )
+  );
 }

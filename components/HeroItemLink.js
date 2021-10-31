@@ -8,5 +8,5 @@ export default function HeroItemLink({link, name, colorClass, newTab}) {
         <a href={link} className={`${colorClass} italicLink`}>{name}</a>
       }
     </>
-  )
+  );
 }

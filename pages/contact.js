@@ -1,6 +1,6 @@
-import BaseContainer from "/components/Containers/BaseContainer"
-import BaseLayout from "/components/Containers/BaseLayout"
-import Head from "next/head"
+import BaseContainer from "/components/Containers/BaseContainer";
+import BaseLayout from "/components/Containers/BaseLayout";
+import Head from "next/head";
 export default function Test() {
   return (
         <BaseLayout>
@@ -107,5 +107,5 @@ export default function Test() {
             </div>
           </BaseContainer>
         </BaseLayout>
-  )
+  );
 }

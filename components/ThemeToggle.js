@@ -1,15 +1,15 @@
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 const ThemeToggle = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <div className=" bg-cool-gray-300 rounded-lg dark:bg-cool-gray-800">
@@ -35,6 +35,6 @@ const ThemeToggle = () => {
         </button>
       }
     </div>
-  )
-}
-export default ThemeToggle
+  );
+};
+export default ThemeToggle;

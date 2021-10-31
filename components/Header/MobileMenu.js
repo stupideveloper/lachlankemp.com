@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from "framer-motion"
-import ThemeToggle from '../ThemeToggle'
-import Link from 'next/link'
+import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from '../ThemeToggle';
+import Link from 'next/link';
 
 export default function MobileMenu() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   function toggleOpen() {
-    setOpen(!open)
+    setOpen(!open);
     if(!open) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden';
     }
     if(open) {
-      document.body.style.overflow = 'visible'
+      document.body.style.overflow = 'visible';
     }
   }
   const variants = {
@@ -62,7 +62,7 @@ export default function MobileMenu() {
         </button>
       }
 
-      <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={()=>{null}}>
+      <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={()=>{null;}}>
         {open && 
           <motion.ul 
           initial="hidden" 
@@ -81,5 +81,5 @@ export default function MobileMenu() {
 
 
     </div>
-  )
+  );
 }

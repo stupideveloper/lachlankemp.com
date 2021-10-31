@@ -1,16 +1,16 @@
-import Link from 'next/link'
-import { useRouter } from "next/router"
-import { useState } from "react"
+import Link from 'next/link';
+import { useRouter } from "next/router";
+import { useState } from "react";
 import HeaderItem from './HeaderItem';
-import ThemeToggle from '../ThemeToggle'
-import MobileMenu from './MobileMenu'
+import ThemeToggle from '../ThemeToggle';
+import MobileMenu from './MobileMenu';
 
 
 export default function Header() {
   const router = useRouter();
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   function toggleOpen() {
-    setOpen(!open)
+    setOpen(!open);
   }
   return (
     <nav className="sm:pt-4 py-4 pt-8">
@@ -39,5 +39,5 @@ export default function Header() {
 
   </div>
 </nav>
-  )
+  );
 }
