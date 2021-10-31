@@ -35,7 +35,7 @@ export default function Subscribe() {
 				duration: 0.3
 			}
 		}
-	}
+	};
 
 	const subscribe = async (e) => {
 		e.preventDefault();
