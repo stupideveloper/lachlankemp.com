@@ -35,7 +35,7 @@ export default function NowPlaying() {
         	</div>
         </a>
 			}
-			{data?.songStatus === 'NotPlaying' &&
+			{data?.songStatus !== 'Playing' &&
         <a href={'https://open.spotify.com/user/begv4cjczdeoyhbaj1vfdb59j?si=a5b22d553e47406e'} target="_blank" rel="noopener noreferrer" data-tip={"Visit profile on spotify"}>
         	<Tooltip />
         	<div className="min-w-max	md:max-w-sm max-w-xs flex h-12 border dark:border-cool-gray-700 rounded-xl overflow-y-hidden truncate">
