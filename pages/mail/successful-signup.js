@@ -12,7 +12,7 @@ export default function Test() {
 			<BaseContainer>
 				<div>
 					<h1 className="text-5xl">Successfuly Subscribed</h1>
-          <h2 className="mt-4">Thanks for signing up, you will now receive emails from me!</h2>
+					<h2 className="mt-4">Thanks for signing up, you will now receive emails from me!</h2>
 				</div>
 				
 			</BaseContainer>
