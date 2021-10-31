@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 export default function NoSSR({ children }) {
-  const [isMounted, setMount] = useState(false);
+	const [isMounted, setMount] = useState(false);
 
-  useEffect(() => {
-    setMount(true);
-  }, []);
+	useEffect(() => {
+		setMount(true);
+	}, []);
 
-  return <>{isMounted ? children : null}</>;
+	return <>{isMounted ? children : null}</>;
 };

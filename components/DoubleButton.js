@@ -12,19 +12,19 @@ export function ButtonItem() {
   )
 }
 export default DoubleButton*/
-import React, { children } from 'react'
+import React, { children } from 'react';
 function CardComponent({ children }) {
-  return (
-    <>{children}</>
-  )
+	return (
+		<>{children}</>
+	);
 }
 export function CardBody() {
-  return <>Body</>
+	return <>Body</>;
 }
 const Card = {
-  Component: CardComponent,
-  Body: CardBody
-}
+	Component: CardComponent,
+	Body: CardBody
+};
 
-export default Card
+export default Card;
 
