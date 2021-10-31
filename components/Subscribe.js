@@ -70,12 +70,12 @@ export default function Subscribe() {
         	<p className="mt-1 mb-4 dark:text-cool-gray-300" >Get emails from me about web development, tech, and early access to my new projects.</p>
         	{!message && 
             <form onSubmit={subscribe}>
-            	<div className="max-w-md">
+            	<div className="">
             		<div className="md:flex block md:space-x-2 space-x-0 mb-2">
             			<input
             				type="email"
             				className="
-                      
+										max-w-sm
                       block
                       w-full
                       rounded-lg
@@ -89,7 +89,7 @@ export default function Subscribe() {
             				ref={inputEl}
             				required
             			/>
-            			<><button className="font-bold px-4 transition bg-cool-gray-300 hover:bg-cool-gray-400 dark:bg-cool-gray-600 rounded-lg py-2 sm:mt-0 mt-2" type="submit">Subscribe</button></>
+            			<><button className="font-bold px-4 transition bg-cool-gray-300 hover:bg-cool-gray-400 dark:bg-cool-gray-600 dark:hover:bg-cool-gray-800 rounded-lg py-2 sm:mt-0 mt-2" type="submit">Subscribe ✨</button></>
 
             		</div>
 
