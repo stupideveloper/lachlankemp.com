@@ -23,4 +23,4 @@ const subscribe = async (req, res) => {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
-export default subscribe
+export default subscribe;

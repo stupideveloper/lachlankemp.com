@@ -1,6 +1,6 @@
-import Footer from "../../components/Footer"
-import Header from "../../components/Header/index"
-import styles from "../Containers/BaseContainer.module.css"
+import Footer from "../../components/Footer";
+import Header from "../../components/Header/index";
+import styles from "../Containers/BaseContainer.module.css";
 
 export default function BaseContainer({children}) {
   return (
@@ -18,5 +18,5 @@ export default function BaseContainer({children}) {
       </div>
 
     </div>
-  )
+  );
 }

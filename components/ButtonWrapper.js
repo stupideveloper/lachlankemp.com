@@ -11,5 +11,5 @@ export default function ButtonWrapper({children, primary, styleParse }) {
     hover:text-black text-mountain-meadow-200`
   } 
     border-mountain-meadow-200 min-w-button-large border-2 px-4 py-1 rounded-lg transition-colors duration-700 hover:duration-200 font-medium ${styleParse}`}>{children}</div>
-  )
+  );
 }

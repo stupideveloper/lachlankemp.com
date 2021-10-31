@@ -1,9 +1,9 @@
-import useSWR from "swr"
-import Tooltip from "./Decorations/Tooltip"
+import useSWR from "swr";
+import Tooltip from "./Decorations/Tooltip";
 export default function NowPlaying() {
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { refreshInterval: 60000 })
-  if (error) {console.error(error)}
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { refreshInterval: 60000 });
+  if (error) {console.error(error);}
   return (
     <div className="flex box-border">
       {data?.songStatus === 'Playing' && 
@@ -60,5 +60,5 @@ export default function NowPlaying() {
       }
   
     </div>
-  )
+  );
 }

@@ -12,7 +12,7 @@ export function ButtonItem() {
   )
 }
 export default DoubleButton*/
-import React, { children } from 'react';
+import React, { children } from 'react'
 function CardComponent({ children }) {
   return (
     <>{children}</>

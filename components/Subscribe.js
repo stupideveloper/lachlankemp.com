@@ -3,13 +3,13 @@ import React, { useRef, useState, useEffect } from 'react';
 export default function Subscribe() {
   const inputEl = useRef(null);
   const [message, setMessage] = useState('');
-  const [isSubscribed, setisSubscribed] = useState(false)
+  const [isSubscribed, setisSubscribed] = useState(false);
   useEffect(() => {
     if (window.localStorage.getItem('isSubscribed')) {
-      console.log('Already Subscribed')
-      setisSubscribed(true)
+      console.log('Already Subscribed');
+      setisSubscribed(true);
     }
-  }, [])
+  }, []);
 
   const subscribe = async (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ export default function Subscribe() {
     // 5. Clear the input value and show a success message.
     inputEl.current.value = '';
     setMessage('Success, you are now subscribed to the newsletter, you wont regret it! 🎉');
-    window.localStorage.setItem('isSubscribed', true)
+    window.localStorage.setItem('isSubscribed', true);
   };
 
   return (

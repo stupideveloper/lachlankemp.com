@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import BaseContainer from '/components/Containers/BaseContainer'
-import ReactMarkdown from 'react-markdown'
-import React from 'react'
+import Head from 'next/head';
+import BaseContainer from '/components/Containers/BaseContainer';
+import ReactMarkdown from 'react-markdown';
+import React from 'react';
 
 const markdown = `
 # Developer Resume
@@ -32,7 +32,7 @@ Has developed numerous Javascript, React and Svelte Based applications (found on
 
 For a far more detailed resume, contact me at me@lachlankemp.com
 
-`
+`;
 
 export default function TestPage() {
   return (
@@ -47,5 +47,5 @@ export default function TestPage() {
         </div>
       </BaseContainer>
     </div>
-  )
+  );
 }
