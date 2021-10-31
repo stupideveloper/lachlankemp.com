@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router])
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark"> 
+    <ThemeProvider attribute="class"> 
       <Component {...pageProps} />
     </ThemeProvider>
 

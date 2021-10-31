@@ -12,10 +12,10 @@ export default function Footer() {
         <Link href="/contact"><a className="footer--item">Contact</a></Link>
         <Link href="https://social.lachlankemp.com/gh"><a className="footer--item">GitHub</a></Link>
         <Link href="mailto:me@lachlankemp.com"><a className="footer--item">Email</a></Link>
-        <Link href="http://nomical-labs.com"><a className="footer--item">Nomical Labs</a></Link>
+        {/*<Link href="http://nomical-labs.com"><a className="footer--item">Nomical Labs</a></Link>*/}
       </div>
       <p className="text-cool-gray-400">© {(new Date().getFullYear())} Lachlan Kemp</p>
-      <p className="text-cool-gray-400 pb-4 text-sm">*Please keep in mind this website is new and is likely full of bugs. If you spot one, <a href="mailto:me@lachlankemp.com">email</a> me.</p>
+      <p className="text-cool-gray-400 pb-4 text-sm">*Please keep in mind this website is new and is likely full of bugs. If you spot one, <a href="mailto:me@lachlankemp.com" className="text-blue-700 dark:text-blue-400">email</a> me.</p>
     </footer>
   )
 }

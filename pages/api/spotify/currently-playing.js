@@ -3,20 +3,24 @@ import { getCurrentlyPlaying } from '/lib/spotify';
 const currentlyPlaying = async (_, res) => {
   const response = await getCurrentlyPlaying();
   if(response.status === 204) {
-    return res.status(200)
+    return res.status(200).json({songStatus:'NotPlaying'})
   }
   if(response.status !== 200) {
-    return res.status(500)
+    return res.status(500).send('Error')
   }
   const items = await response.json()
 
   if (items.currently_playing_type === 'episode') {
-    return res.status(200).json({})
+    return res.status(200).json({
+      songStatus: 'NotPlaying'
+    })
   } 
   
   if (items.currently_playing_type === 'track') {
+
     const relativeProgress = Math.round((100 * items.progress_ms) / items.item.duration_ms)
     return res.status(200).json({ 
+      songStatus: 'Playing',
       title: items.item.name,
       album: items.item.album.name,
       artists: items.item.artists,
@@ -27,6 +31,7 @@ const currentlyPlaying = async (_, res) => {
       relativeProgress: relativeProgress
     });
   }
-  return res.status(500)
+  res.status(500)
+  res.end()
 };
 export default currentlyPlaying
