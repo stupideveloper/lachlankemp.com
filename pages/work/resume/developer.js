@@ -35,17 +35,17 @@ For a far more detailed resume, contact me at me@lachlankemp.com
 `;
 
 export default function TestPage() {
-  return (
-    <div className="dark:text-white dark:bg-black flex-col items-center justify-center min-h-screen">
-      <Head>
-        <title>Dev Resume | Lachlan Kemp</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <BaseContainer>
-        <div className = 'prose dark:prose-dark pt-7'>
-          <ReactMarkdown>{markdown}</ReactMarkdown>
-        </div>
-      </BaseContainer>
-    </div>
-  );
+	return (
+		<div className="dark:text-white dark:bg-black flex-col items-center justify-center min-h-screen">
+			<Head>
+				<title>Dev Resume | Lachlan Kemp</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<BaseContainer>
+				<div className = 'prose dark:prose-dark pt-7'>
+					<ReactMarkdown>{markdown}</ReactMarkdown>
+				</div>
+			</BaseContainer>
+		</div>
+	);
 }
