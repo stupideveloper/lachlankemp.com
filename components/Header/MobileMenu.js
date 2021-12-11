@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from '../ThemeToggle';
-import SoundToggle from '../SoundToggle'
+import SoundToggle from '../SoundToggle';
 import Link from 'next/link';
 
 export default function MobileMenu() {
