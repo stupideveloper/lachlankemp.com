@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from '/components/Head';
 import BaseContainer from '/components/Containers/BaseContainer';
 import ReactMarkdown from 'react-markdown';
 import React from 'react';
@@ -37,10 +37,10 @@ For a far more detailed resume, contact me at me@lachlankemp.com
 export default function TestPage() {
 	return (
 		<div className="dark:text-white dark:bg-black flex-col items-center justify-center min-h-screen">
-			<Head>
-				<title>Dev Resume | Lachlan Kemp</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			<Head title="Developer Resume">
+				<meta name="description" content="My developer resume." />
+				<link rel="canonical" href="https://lachlankemp.com/work/resume/developer" />
+			</Head>			
 			<BaseContainer>
 				<div className = 'prose dark:prose-dark pt-7'>
 					<ReactMarkdown>{markdown}</ReactMarkdown>

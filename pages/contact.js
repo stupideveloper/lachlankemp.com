@@ -1,12 +1,11 @@
 import BaseContainer from "/components/Containers/BaseContainer";
 import BaseLayout from "/components/Containers/BaseLayout";
-import Head from "next/head";
+import Head from '/components/Head';
 export default function Test() {
 	return (
 		<BaseLayout>
-			<Head>
-				<title>Contact – Lachlan Kemp</title>
-				<meta name="description" content="A person focusing on, Javascript, React, Svelte and new technologies." />
+			<Head title="Contact">
+				<meta name="description" content="Contact me." />
 				<link rel="canonical" href="https://lachlankemp.com/contact" />
 			</Head>
 			<BaseContainer>
