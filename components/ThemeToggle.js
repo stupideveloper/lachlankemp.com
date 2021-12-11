@@ -1,28 +1,28 @@
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import useSound from 'use-sound';
-import isMutedAtom from '/lib/isMuted'
-import { useAtom } from 'jotai'
+import isMutedAtom from '/lib/isMuted';
+import { useAtom } from 'jotai';
 
 const ThemeToggle = () => {
 	const [playbackRate, setPlaybackRate] = useState(0.75);
 	const [mounted, setMounted] = useState(false);
 	const { setTheme, resolvedTheme } = useTheme();
-	const [isMuted, setIsMuted] = useAtom(isMutedAtom)
+	const [isMuted, setIsMuted] = useAtom(isMutedAtom);
 
 	
-  const [playClick] = useSound('/assets/sounds/click.mp3', { 
-			playbackRate,
-			volume: 1.5 
-		}
-  );
+	const [playClick] = useSound('/assets/sounds/click.mp3', { 
+		playbackRate,
+		volume: 1.5 
+	}
+	);
 	
 	// When mounted on client, now we can show the UI
 	useEffect(() => setMounted(true), []);
 
 	function runSetTheme(theme) {
 		setTheme(theme);
-		if (isMuted) return
+		if (isMuted) return;
 		if (theme === 'dark') {
 			setPlaybackRate(0.75);
 			playClick();

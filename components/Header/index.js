@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import HeaderItem from './HeaderItem';
 import ThemeToggle from '../ThemeToggle';
-import SoundToggle from '../SoundToggle'
+import SoundToggle from '../SoundToggle';
 import MobileMenu from './MobileMenu';
 
 
