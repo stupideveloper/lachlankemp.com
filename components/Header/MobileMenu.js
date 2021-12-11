@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from '../ThemeToggle';
+import SoundToggle from '../SoundToggle'
 import Link from 'next/link';
 
 export default function MobileMenu() {
@@ -74,7 +75,7 @@ export default function MobileMenu() {
           	<motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="/work/resume/developer"><a onClick={toggleOpen} className={"p-3 block"}>Resume</a></Link></motion.li>
           	<motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400"}><Link href="https://social.lachlankemp.com/gh"><a onClick={toggleOpen} className={"p-3 block"}>GitHub</a></Link></motion.li>
           	<motion.li variants={item} className={"mb-3 border-b dark:text-cool-gray-400 text-cool-gray-700 dark:border-cool-gray-800 border-cool-gray-400  "}><Link href="/contact"><a onClick={toggleOpen} className={"p-3 block"}>Contact</a></Link></motion.li>
-          	<motion.li variants={item} className={"p-3 w-min"}><ThemeToggle /></motion.li>
+          	<motion.li variants={item} className={"p-3 w-min flex gap-2"}><ThemeToggle /><SoundToggle /></motion.li>
           </motion.ul>
 				}
 			</AnimatePresence>
