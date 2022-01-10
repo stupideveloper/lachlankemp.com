@@ -36,20 +36,7 @@
 .song-progress::-webkit-progress-bar {
   @apply dark:bg-slate-700 bg-slate-400;
 }
-.scroll-text {
-  /* animation properties */
-  transform: translateX(100%);
 
-  animation: scroll 20s linear infinite;
-}
-@keyframes scroll {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 .full-bleed {
   width: 100% !important;
   grid-column: 1 / 4 !important;
