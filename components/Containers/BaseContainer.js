@@ -8,7 +8,9 @@ export default function BaseContainer({children}) {
 			<Header />
 
 			<div className={styles.wrapper}>
-				{children}
+				<main className="px-8">
+					{children}
+				</main>
 				<Footer/>        
 			</div>
 

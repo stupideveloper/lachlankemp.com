@@ -15,9 +15,9 @@ export default function NowPlaying() {
         		<div className="flex flex-col my-auto w-full max-w-full overflow-x-hidden">
         			<span className="text-xs dark:text-slate-400 text-center ">I&apos;m listening to:</span>
         			<div className="w-max flex overflow-hidden	">
-        				<marquee className={`text-slate-600 dark:text-slate-400 flex w-full px-2`}>
+        				<div className={`text-slate-600 dark:text-slate-400  flex ${data?.title ? 'scroll-text' : ''} w-full px-2`}>
         					<span className="font-bold">{data.title}</span>
-								
+                
         					<span className="mx-2 dark:text-slate-400"> – </span>
         					<ul className="artists flex space-x-1">
         						{data.artists.map(artist => (
@@ -26,7 +26,7 @@ export default function NowPlaying() {
         							</li>
         						))}
         					</ul>
-        				</marquee>
+        				</div>
         			</div>
         			<div>
         				<label htmlFor="song" className="hidden">Song progress</label>

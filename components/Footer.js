@@ -6,9 +6,9 @@ import NowPlaying from './NowPlaying';
 export default function Footer() {
 	return (
 		<>
-			<footer className=" flex flex-col sm:py-4 sm:px-4 py-2 ">
+			<footer className=" flex flex-col sm:py-4 sm:px-4 py-2 px-8">
 				<hr className="w-full border-1 border-slate-300 dark:border-gray-800 mb-8" />
-				<div className="flex">
+				<div className="flex flex-col gap-y-2">
 					<NowPlaying />
 					<Counter />
 				</div>
