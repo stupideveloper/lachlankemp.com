@@ -2,6 +2,7 @@ import Head from '/components/Head';
 import BaseContainer from '/components/Containers/BaseContainer';
 import ReactMarkdown from 'react-markdown';
 import React from 'react';
+import ordinalSuffixOf from '../../../lib/ordinalSuffix';
 
 const markdown = `
 # Developer Resume
@@ -43,8 +44,11 @@ export default function TestPage() {
 			</Head>			
 			<BaseContainer>
 				<div className = 'prose dark:prose-dark pt-7'>
+					
 					<ReactMarkdown>{markdown}</ReactMarkdown>
+
 				</div>
+
 			</BaseContainer>
 		</div>
 	);

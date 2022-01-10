@@ -1,23 +1,24 @@
 import useSWR from "swr";
 import Tooltip from "./Decorations/Tooltip";
+const fetcher = (...args) => fetch(...args).then(res => res.json());
+
 export default function NowPlaying() {
-	const fetcher = (...args) => fetch(...args).then(res => res.json());
-	const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { refreshInterval: 60000 });
+	const { data, error } = useSWR('/api/spotify/currently-playing', fetcher, { revalidateOnFocus: true, revalidateOnMount: true, revalidateOnReconnect: true, });
 	if (error) {console.error(error);}
 	return (
 		<div className="flex box-border">
 			{data?.songStatus === 'Playing' && 
         <a href={data.link} target="_blank" rel="noopener noreferrer" data-tip={"Visit song on spotify"}>
         	<Tooltip />
-        	<div className="min-w-max	md:max-w-sm max-w-xs flex h-12 border dark:border-cool-gray-700 rounded-xl overflow-y-hidden truncate">
+        	<div className="min-w-max	md:max-w-sm max-w-xs flex h-12 border dark:border-slate-700 rounded-xl overflow-y-hidden truncate">
         		<img className="relative max-h-full" src={data.albumCover.url} alt={`${data.album} cover`}  />
         		<div className="flex flex-col my-auto w-full max-w-full overflow-x-hidden">
-        			<span className="text-xs dark:text-cool-gray-400 text-center ">I&apos;m listening to:</span>
+        			<span className="text-xs dark:text-slate-400 text-center ">I&apos;m listening to:</span>
         			<div className="w-max flex overflow-hidden	">
-        				<div className={`text-cool-gray-600 dark:text-cool-gray-400  flex ${data?.title ? 'scroll-text' : ''} w-full px-2`}>
+        				<marquee className={`text-slate-600 dark:text-slate-400 flex w-full px-2`}>
         					<span className="font-bold">{data.title}</span>
-                
-        					<span className="mx-2 dark:text-cool-gray-400"> – </span>
+								
+        					<span className="mx-2 dark:text-slate-400"> – </span>
         					<ul className="artists flex space-x-1">
         						{data.artists.map(artist => (
         							<li key={artist.name}>
@@ -25,7 +26,7 @@ export default function NowPlaying() {
         							</li>
         						))}
         					</ul>
-        				</div>
+        				</marquee>
         			</div>
         			<div>
         				<label htmlFor="song" className="hidden">Song progress</label>
@@ -38,17 +39,17 @@ export default function NowPlaying() {
 			{!data || data?.songStatus !== 'Playing' &&
         <a href={'https://open.spotify.com/user/begv4cjczdeoyhbaj1vfdb59j?si=a5b22d553e47406e'} target="_blank" rel="noopener noreferrer" data-tip={"Visit profile on spotify"}>
         	<Tooltip />
-        	<div className="min-w-max	md:max-w-sm max-w-xs flex h-12 border dark:border-cool-gray-700 rounded-xl overflow-y-hidden truncate">
+        	<div className="min-w-max	md:max-w-sm max-w-xs flex h-12 border dark:border-slate-700 rounded-xl overflow-y-hidden truncate">
         		<div className="flex flex-col my-auto w-full max-w-full overflow-x-hidden">
-        			<span className="text-xs dark:text-cool-gray-400 text-center ">I&apos;m listening to:</span>
+        			<span className="text-xs dark:text-slate-400 text-center ">I&apos;m listening to:</span>
         			<div className="w-max flex overflow-hidden	">
-        				<div className={`text-cool-gray-600 dark:text-cool-gray-400  flex ${data?.title ? 'scroll-text' : ''} w-full px-2`}>
+        				<div className={`text-slate-600 dark:text-slate-400  flex ${data?.title ? 'scroll-text' : ''} w-full px-2`}>
 
         					<span className="font-bold">Not Playing</span>
                 
-        					<span className="mx-2 dark:text-cool-gray-400"> – </span>
+        					<span className="mx-2 dark:text-slate-400"> – </span>
 
-        					<span className="flex dark:text-cool-gray-200">Spotify</span>
+        					<span className="flex dark:text-slate-200">Spotify</span>
                 
         				</div>
         			</div>

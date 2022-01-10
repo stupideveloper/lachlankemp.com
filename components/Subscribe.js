@@ -67,9 +67,9 @@ export default function Subscribe() {
 			{!isSubscribed &&
 		<motion.div ref={ref} className="Box" initial="hidden" animate={controls} variants={varients}>
 			
-			<div className="bg-cool-gray-100 dark:bg-cool-gray-900 p-4 rounded-lg">
+			<div className="bg-slate-100 dark:bg-slate-900 p-4 rounded-lg">
         	<p className="text-xl font-bold">Subscribe to the newsletter</p>
-        	<p className="mt-1 mb-4 dark:text-cool-gray-300" >Get emails from me about web development, tech, and early access to my new projects.</p>
+        	<p className="mt-1 mb-4 dark:text-slate-300" >Get emails from me about web development, tech, and early access to my new projects.</p>
         	{!message && 
             <form onSubmit={subscribe}>
             	<div className="">
@@ -81,8 +81,8 @@ export default function Subscribe() {
                       block
                       w-full
                       rounded-lg
-                      dark:placeholder-cool-gray-400
-                      dark:bg-cool-gray-900
+                      dark:placeholder-slate-400
+                      dark:bg-slate-900
                       shadow-sm
                     
                       focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
@@ -91,7 +91,7 @@ export default function Subscribe() {
             				ref={inputEl}
             				required
             			/>
-            			<><button className="font-bold px-4 transition bg-cool-gray-300 hover:bg-cool-gray-400 dark:bg-cool-gray-600 dark:hover:bg-cool-gray-800 rounded-lg py-2 sm:mt-0 mt-2" type="submit">Subscribe ✨</button></>
+            			<><button className="font-bold px-4 transition bg-slate-300 hover:bg-slate-400 dark:bg-slate-600 dark:hover:bg-slate-800 rounded-lg py-2 sm:mt-0 mt-2" type="submit">Subscribe ✨</button></>
 
             		</div>
 
@@ -99,7 +99,7 @@ export default function Subscribe() {
             	</div>
             </form>
         	}
-        	<div className="dark:text-cool-gray-400 text-sm">
+        	<div className="dark:text-slate-400 text-sm">
         		{message ? message : ``}
         		{!message &&
               <div>

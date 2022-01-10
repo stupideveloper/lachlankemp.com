@@ -8,6 +8,7 @@ import NProgress from 'nprogress';
 import '/styles/nprogress.css';
 
 
+
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 
@@ -30,11 +31,11 @@ function MyApp({ Component, pageProps }) {
 			router.events.off('routeChangeError', handleStop);
 		};
 	}, [router]);
+
 	return (
 		<ThemeProvider attribute="class"> 
 			<Component {...pageProps} />
 		</ThemeProvider>
-
 	);
 }
 
