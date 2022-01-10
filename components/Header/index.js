@@ -19,7 +19,7 @@ export default function Header() {
 
 				<div className="flex justify-between ">
 					<div className="flex flex-grow">
-						<div className="dark:hover:bg-cool-gray-400 hover:bg-cool-gray-700 dark:hover:text-cool-gray-900 hover:text-white transition-colors dark:text-cool-gray-400 dark:border-cool-gray-500 border-cool-gray-700 px-3 py-1 border border-solid rounded-full">
+						<div className="dark:hover:bg-slate-400 hover:bg-slate-700 dark:hover:text-slate-900 hover:text-white transition-colors dark:text-slate-400 dark:border-slate-500 border-slate-700 px-3 py-1 border border-solid rounded-full">
 							<Link href='/'>
                 Lachlan Kemp
 							</Link>

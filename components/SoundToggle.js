@@ -32,7 +32,7 @@ const SoundToggle = () => {
 	return (
 		<ClientOnly>
       		<div className="flex">
-				<div className={` bg-cool-gray-300 rounded-lg  dark:bg-cool-gray-800 dark:hover:bg-cool-gray-400 hover:bg-cool-gray-100 transition-colors`}>
+				<div className={` bg-slate-300 rounded-lg  dark:bg-slate-800 dark:hover:bg-slate-400 hover:bg-slate-100 transition-colors`}>
 					{!isMuted && 
 					<button onClick={() => {setSoundState(false);}} aria-label="Switch to system theme mode" className="flex p-2">
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

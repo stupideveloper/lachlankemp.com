@@ -7,7 +7,7 @@
 }
 @layer base {
   h1 {
-    @apply dark:text-cool-gray-300 text-cool-gray-700 font-extrabold	
+    @apply dark:text-slate-300 text-slate-700 font-extrabold	
   }
 }
 @layer components {
@@ -15,10 +15,10 @@
     @apply inline-block cursor-pointer transform transition-all hover:-skew-x-12;
   }
   .active--headerLink {
-    @apply text-cool-gray-400;
+    @apply text-slate-400;
   }
   .footer--item {
-    @apply text-cool-gray-700 hover:text-cool-gray-500 dark:text-cool-gray-400 dark:hover:text-cool-gray-600 p-2 pl-0
+    @apply text-slate-700 hover:text-slate-500 dark:text-slate-400 dark:hover:text-slate-600 p-2 pl-0
   }
 }
 .artists>li::after {
@@ -34,7 +34,7 @@
   @apply dark:bg-blue-400 bg-blue-600;
 }
 .song-progress::-webkit-progress-bar {
-  @apply dark:bg-cool-gray-700 bg-cool-gray-400;
+  @apply dark:bg-slate-700 bg-slate-400;
 }
 .scroll-text {
   /* animation properties */
@@ -49,4 +49,8 @@
   to {
     transform: translateX(-100%);
   }
+}
+.full-bleed {
+  width: 100% !important;
+  grid-column: 1 / 4 !important;
 }
