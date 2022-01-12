@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import splitbee from '@splitbee/web';
 import { useInView } from 'react-intersection-observer';
 export default function Subscribe() {
 	const inputEl = useRef(null);
@@ -60,6 +61,7 @@ export default function Subscribe() {
 		inputEl.current.value = '';
 		setMessage('Success, you are now subscribed to the newsletter, you wont regret it! 🎉');
 		window.localStorage.setItem('isSubscribed', true);
+		splitbee.track("Subscribe to newsletter");
 	};
 
 	return (
