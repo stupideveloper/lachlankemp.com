@@ -61,7 +61,9 @@ export default function Subscribe() {
 		inputEl.current.value = '';
 		setMessage('Success, you are now subscribed to the newsletter, you wont regret it! 🎉');
 		window.localStorage.setItem('isSubscribed', true);
-		splitbee.track("Subscribe to newsletter");
+		splitbee.track("Subscribe Newsletter", {
+			email: inputEl.current.value,
+		});
 	};
 
 	return (
