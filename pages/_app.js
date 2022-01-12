@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import '/styles/nprogress.css';
 
+import splitbee from '@splitbee/web';
+splitbee.init();
+
 
 
 function MyApp({ Component, pageProps }) {
