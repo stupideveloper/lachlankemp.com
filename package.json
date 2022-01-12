@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@splitbee/web": "^0.3.0",
     "framer-motion": "^5.0.0",
     "graphql": "^16.2.0",
     "jotai": "^1.4.7",
