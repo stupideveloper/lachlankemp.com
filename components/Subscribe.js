@@ -53,6 +53,11 @@ export default function Subscribe() {
 
 		const { error } = await res.json();
 
+		splitbee.track("Subscribe Newsletter", {
+			email: inputEl.current.value,
+		});
+		inputEl.current.value = '';
+
 		if (error) {
 			setMessage(error);
 			return;
@@ -60,10 +65,7 @@ export default function Subscribe() {
 
 		setMessage('Success, you are now subscribed to the newsletter, you wont regret it! 🎉');
 		window.localStorage.setItem('isSubscribed', true);
-		splitbee.track("Subscribe Newsletter", {
-			email: inputEl.current.value,
-		});
-		inputEl.current.value = '';
+		
 
 	};
 
