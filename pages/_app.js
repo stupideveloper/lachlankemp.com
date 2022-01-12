@@ -8,11 +8,18 @@ import NProgress from 'nprogress';
 import '/styles/nprogress.css';
 
 import splitbee from '@splitbee/web';
-splitbee.init();
 
 
 
 function MyApp({ Component, pageProps }) {
+
+	useEffect(() => {
+		splitbee.init({
+			scriptUrl: "/bee.js",
+			apiUrl: "/_hive",
+		});
+	}, []);
+
 	const router = useRouter();
 
 	useEffect(() => {
