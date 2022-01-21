@@ -7,7 +7,11 @@ const bigProjects = [
 		title: "OpenChatV6",
 		tags: ["React", "Next.JS", "TypeScript", "Supabase", "Cloudflare Workers"],
 		description: "An open source chat application.",
+<<<<<<< HEAD
 		image: "/projects/openChatV6_ukeztb.jpg",
+=======
+		image: "https://res.cloudinary.com/lkemp/image/upload/projects/openChatV6_ukeztb.jpg",
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
 		link: "https://github.com/stupideveloper/SwagChatV6",
 		disabled: false
 	},
@@ -15,7 +19,11 @@ const bigProjects = [
 		title: "RefTracker",
 		tags: ["React","Next.JS","Cloudflare Workers"],
 		description: "An open source referral tracker.",
+<<<<<<< HEAD
 		image: "/projects/refTracker_cbybqp.jpg",
+=======
+		image: "https://res.cloudinary.com/lkemp/image/upload/projects/refTracker_cbybqp.jpg",
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
 		link: "https://github.com/stupideveloper/RefTracker",
 		disabled: false
 	},
@@ -85,7 +93,11 @@ function Panel({...props}) {
 export default function Projects() {
 	return (
 		<div id="projects" className="scroll-mt-12">
+<<<<<<< HEAD
 			<h3 className='font-bold text-3xl'>Things I&apos;ve made and are making</h3>
+=======
+			<h2 className='font-bold text-3xl'>Things I&apos;ve made and are making</h2>
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
       <p className='mt-1 text-gray-500 text-xl mb-6'>My little side projects, successful or not.</p>		
 			<div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 my-4">
 				{bigProjects.map((project, index) => (

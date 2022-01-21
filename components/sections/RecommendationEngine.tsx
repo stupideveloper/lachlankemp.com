@@ -43,7 +43,11 @@ export default function RecommendedActions() {
 		}
 		if (window.localStorage.getItem('guestbookUsed') !== 'true') {
 			temp.push({
+<<<<<<< HEAD
 				name: 'Sign Guestbook',
+=======
+				name: 'Guestbook',
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
 				action: '/guestbook'
 			})
 		}

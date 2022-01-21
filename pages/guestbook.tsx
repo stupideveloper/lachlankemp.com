@@ -30,7 +30,11 @@ function GuestBookItem({item, user}: {item: any, user: any}) {
           <>
             <span className="mx-2">/</span> 
             <button
+<<<<<<< HEAD
               className="text-sm text-red-600 dark:text-red-400"
+=======
+              className="text-sm text-red-600 "
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
               onClick={deleteEntry}
             >
               Delete
@@ -69,7 +73,11 @@ export default function Guestbook() {
 		<StandardPage>
 			<div>
 				<h1 className="text-5xl font-black">Guestbook</h1>
+<<<<<<< HEAD
 				<p className="text-xl mt-2 mb-6 text-gray-600">Leave a comment below. It could be anything – information, appreciation, humor, or wisdom. Surprise me!</p>
+=======
+				<p className="text-xl mt-2 mb-6 text-gray-600 ">Leave a comment below. It could be anything – information, appreciation, humor, or wisdom. Surprise me!</p>
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
 			</div>
 			<div className="mt-4 p-4 bg-blue-100 rounded-lg">
 				<h2 className="text-2xl font-bold">Sign the Guestbook</h2>
@@ -89,7 +97,11 @@ export default function Guestbook() {
 						<div>
 							<p className="mb-2">To share a message to a future viewer of my site, please login with GitHub.</p>
 							<Button onClick={()=>{signIn('github')}} label="Sign In" />
+<<<<<<< HEAD
 							<p className='text-sm text-gray-600 mt-2'>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
+=======
+							<p className='text-sm text-gray-600 mt-2 '>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
+>>>>>>> 37cd1d48382be700cddd9ec143de566a64ae4635
 						</div>
 					)
 				}
