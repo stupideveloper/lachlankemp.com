@@ -1,5 +1,6 @@
 import Footer from './sections/Footer'
 import fullbleedstyles from '../styles/fullbleed.module.css'
+import Head from 'next/head'
 
 export default function MainWrapper({...props}) {
 	return (

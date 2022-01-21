@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Contact from '../components/sections/Contact';
 import NewsletterSignup from '../components/sections/Newsletter';
 import RecommendedActions from '../components/sections/RecommendationEngine';
+import Head from 'components/Head';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         
         <div className='text-center pt-10 pb-20 px-8' id='skip'>
           <div className='flex justify-center mb-4'>
-            <Image src='/c_fill,g_face:center,h_400,r_max,w_400,y_860/v1642393734/me_0.75x_lcifje.png' className='' alt='Picture of me' width={125} height={125} quality={85} />
+            <Image src='https://res.cloudinary.com/lkemp/image/upload/c_fill,g_face:center,h_400,r_max,w_400,y_860/v1642393734/me_0.75x_lcifje.png' className='' alt='Picture of me' width={125} height={125} quality={100} />
           </div>
           <h1 className='text-5xl font-bold mb-2'>Hi, I&apos;m Lachlan!</h1>
           <p className='text-2xl text-gray-600 mb-4'>Building robots and applications for the web.</p>
@@ -26,7 +27,7 @@ export default function Home() {
         </div>
       </div>
       <MainWrapper>
-        
+        <Head />
         <Projects />
         <NewsletterSignup />
        
