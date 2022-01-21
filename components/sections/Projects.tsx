@@ -65,7 +65,7 @@ function Panel({...props}) {
 	return (
 		<div className=" border flex flex-col shadow-sm rounded-md border-gray-200 overflow-hidden">
 			<div className=" flex flex-col justify-center py-2 px-4 border-b border-gray-200">
-				<h4 className=" font-bold">{project.title}</h4>
+				<h3 className=" font-bold">{project.title}</h3>
 				<p className="text-gray-500 mb-4">{project.description}</p>
 				<div className="flex gap-x-3">
 					{project.tags.map((tag: null | undefined, index: Key | null | undefined) => (

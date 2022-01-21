@@ -12,9 +12,9 @@ export default function ListeningTo() {
 			<div className="flex">
 				<div className="flex-1">
 					{data?.isPlaying ? (
-						<a target="_blank" rel="noreferrer" href={data?.songUrl}><h4 className="text-xl flex-1 cursor-pointer">Currently Listening To <ExternalLinkIcon className="w-4 h-4 inline" /></h4></a>
+						<a target="_blank" rel="noreferrer" href={data?.songUrl}><h3 className="text-xl flex-1 cursor-pointer">Currently Listening To <ExternalLinkIcon className="w-4 h-4 inline" /></h3></a>
 					): (
-						<a target="_blank" rel="noreferrer" href={data?.songUrl}><h4 className="text-xl flex-1 cursor-pointer">Last Listened To <ExternalLinkIcon className="w-4 h-4 inline" /></h4></a>
+						<a target="_blank" rel="noreferrer" href={data?.songUrl}><h3 className="text-xl flex-1 cursor-pointer">Last Listened To <ExternalLinkIcon className="w-4 h-4 inline" /></h3></a>
 					)}
 				</div>
 			</div>

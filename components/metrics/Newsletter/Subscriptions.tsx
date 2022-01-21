@@ -29,9 +29,9 @@ export default function Subscriptions() {
 			<div className="flex">
 				<div className="flex-1">
 					{isSubscribed ? (
-						<h4 className="text-xl flex-1">(Future) Newsletter Subscribers</h4>
+						<h3 className="text-xl flex-1">(Future) Newsletter Subscribers</h3>
 					) : (
-						<Link passHref href="/#subscribe"><a><h4 className="text-xl flex-1 cursor-pointer">(Future) Newsletter Subscribers <ExternalLinkIcon className="w-4 h-4 inline" /></h4></a></Link>
+						<Link passHref href="/#subscribe"><a><h3 className="text-xl flex-1 cursor-pointer">(Future) Newsletter Subscribers <ExternalLinkIcon className="w-4 h-4 inline" /></h3></a></Link>
 					)}
 				</div>
 			</div>

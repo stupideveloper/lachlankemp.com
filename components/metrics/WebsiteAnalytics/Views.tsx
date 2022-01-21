@@ -22,7 +22,7 @@ export default function Views() {
 		<DashItem>
 			<div className="flex">
 				<div className="flex-1">
-					<a target="_blank" rel="noreferrer" href="https://umami.lachlankemp.com/share/dbwjG1hN/lachlankemp.com"><h4 className="text-xl flex-1 cursor-pointer">Website Views <ExternalLinkIcon className="w-4 h-4 inline" /></h4></a>
+					<a target="_blank" rel="noreferrer" href="https://umami.lachlankemp.com/share/dbwjG1hN/lachlankemp.com"><h3 className="text-xl flex-1 cursor-pointer">Website Views <ExternalLinkIcon className="w-4 h-4 inline" /></h3></a>
 				</div>
 				
 
