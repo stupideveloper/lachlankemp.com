@@ -29,7 +29,7 @@ export default function Footer() {
 					</Link>
 				</div>
 				<div className=' mt-4 px-4'>
-					<span>&copy; {new Date().getFullYear()} Lachlan J Kemp</span>
+					<span>&copy; {new Date().getFullYear()} Lachlan Kemp</span>
 				</div>
 			</div>
 
