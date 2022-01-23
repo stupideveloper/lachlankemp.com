@@ -1,0 +1,12 @@
+.head {
+	background-image: url("/images/mesh(3).png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-y: top;
+}
+@media only screen and (max-width: 600px) {
+	.head {
+
+		background-position-x: right;
+	}
+} 

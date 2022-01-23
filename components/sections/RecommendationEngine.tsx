@@ -8,17 +8,17 @@ const isSubscribedAtom = atomWithStorage('isSubscribed', false)
 const colorClasses = [
 	{
 		bg: 'bg-blue-100',
-		text: 'text-blue-900',
+		text: 'text-black',
 		hover: 'hover:bg-blue-200'
 	},
 	{
 		bg: 'bg-green-100',
-		text: 'text-green-900',
+		text: 'text-black',
 		hover: 'hover:bg-green-200'
 	},
 	{
 		bg: 'bg-gray-200',
-		text: 'text-gray-800',
+		text: 'text-black',
 		hover: 'hover:bg-gray-300'
 	},
 
@@ -54,7 +54,7 @@ export default function RecommendedActions() {
 
 	return (
 		<div>
-			<p className='text-gray-600 mb-2'>Things to do:</p>
+			<p className='text-gray-300 mb-2'>Things to do:</p>
 			<div className='flex gap-x-2 justify-center'>
 				{recommendations.slice(0,3).map((recommendation, index) => (
 					<div key={index}>
