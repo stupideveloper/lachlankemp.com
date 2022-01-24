@@ -1,10 +1,11 @@
 import NextHead from 'next/head';
+import React from 'react'
 interface Props {
 	title?: string;
 	description?: string;
 	url?: string;
 	image?: string;
-	children?: JSX.Element;
+	children?: React.ReactElement;
 }
 export default function Head({title, description, url, image, children} :  Props) {
 	return (

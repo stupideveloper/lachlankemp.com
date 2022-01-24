@@ -11,9 +11,7 @@ import headStyles from '../styles/headStyles.module.css';
 
 export default function Home() {
   return (
-    <div className="">
-   
-    
+    <div>
       <div className={`rounded-b-[10%] md:rounded-b-[25%] ${headStyles.head} ${fullbleedstyles.wrapper}  mb-10 bg-black`}>
         <div className="full-bleed ">
           <Header linkColor="#fff" />
