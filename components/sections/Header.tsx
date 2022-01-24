@@ -17,7 +17,7 @@ export default function Header({linkColor = ""} : {linkColor?: string}) {
 	return (
 		<header className={`px-8`}>
 			<div className={fullbleedstyles.wrapper}>
-				<nav className={`flex flex-row py-4 relative rounded-full bg-black/25 px-8 mt-4 mb-4 `}>
+				<nav className={`flex flex-row py-4 relative rounded-full bg-black/[15%] px-8 mt-4 mb-4 `}>
 					<a href="#skip" className="skip-to-content">Skip to content</a>
 					<div className="flex-1 flex justify-start items-center gap-x-4">
 						<HeaderLink linkColor={linkColor}><Link href={'/#projects'}>Projects</Link></HeaderLink>
