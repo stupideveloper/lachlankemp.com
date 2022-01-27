@@ -66,7 +66,7 @@ export default function Guestbook() {
 		window.localStorage.setItem('guestbookUsed', 'true');
 	}
 	return (
-		<StandardPage>
+		<StandardPage title="Guestbook" description={`Leave a comment in my guestbook. It could be anything – information, appreciation, humor, or wisdom. Surprise me!`} url="https://lachlankemp.com/dashboard">
 			<div>
 				<h1 className="text-5xl font-black">Guestbook</h1>
 				<p className="text-xl mt-2 mb-6 text-gray-600 ">Leave a comment below. It could be anything – information, appreciation, humor, or wisdom. Surprise me!</p>

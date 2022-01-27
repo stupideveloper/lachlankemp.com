@@ -1,19 +1,17 @@
-import Head from "next/head"
+import Head from "./Head"
 import MainWrapper from "./MainWrapper"
 import Header from "./sections/Header"
-export default function StandardPage({...props}) {
+export default function StandardPage({url, image, description, title, children} : {url?: string, image?: string, description?: string, title: string, children: React.ReactElement}) {
 	return (
 		<div className="bg-gray-50 ">
-			<Head>
-				<title>Lachlan Kemp</title>
-			</Head>
+			<Head url={url} image={image} description={description} title={title} />
 			<div className={``}>
 				<Header />
 			</div>
 			
 			<MainWrapper>
 				<main id="skip">
-					{props.children}
+					{children}
 				</main>
 				
 			</MainWrapper>

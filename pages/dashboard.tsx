@@ -9,7 +9,7 @@ import List from "components/metrics/Spotify/List";
 
 export default function Dashboard() {
 	return (
-		<StandardPage>
+		<StandardPage title="Dashboard" description={`My personal "life" dashboard, which includes all the different stats about my online life`} url="https://lachlankemp.com/guestbook">
 			<div>
 				<h1 className="text-5xl font-black">Dashboard</h1>
 				<p className="text-xl mt-2 text-gray-600">This is my personal &quot;life&quot; dashboard, it includes all the different stats about my online life, and gives you a sneak peak too!</p>

@@ -40,8 +40,6 @@ export default function Header({linkColor = ""} : {linkColor?: string}) {
 					</div>
 				</nav>
 			</div>
-	
-
 		</header>
 	)
 }

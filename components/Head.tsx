@@ -10,8 +10,7 @@ interface Props {
 export default function Head({title, description, url, image, children} :  Props) {
 	return (
 		<NextHead>
-			<link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
-			<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
 
 			<link
 				rel="preconnect"
