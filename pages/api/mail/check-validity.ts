@@ -8,7 +8,7 @@ async function handler(
 	const API_KEY = process.env.BUTTONDOWN_API_KEY;
 	const { id } = req.query;
 	if (!id) return res.status(400).json({ error: 'id is required' });
-
+  if (typeof id !== 'number') return res.status(400).json({ error: 'id is invalid' });
   const response = await fetch(`https://api.buttondown.email/v1/subscribers/${id}`, {
     headers: {
       Authorization: `Token ${API_KEY}`,
