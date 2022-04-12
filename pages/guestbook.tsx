@@ -1,4 +1,6 @@
-import { Button, Input, InputLabel } from 'pretty-things';
+import Button from 'components/atoms/Button';
+import InputLabel from 'components/atoms/InputLabel';
+import Input from 'components/atoms/Input';
 import StandardPage from "../components/StandardPage";
 import { useSession, signIn, signOut } from "next-auth/react"
 import fetcher from '../lib/utils/fetcher';
@@ -80,7 +82,7 @@ export default function Guestbook() {
 							<form onSubmit={sendData} className='block md:flex gap-x-4 items-end'>
 								<div className='mt-2 gap-x-4 sm:flex	items-end'>
 									<Input style={{background: 'transparent', width: '100%'}} placeholder='Your message' id='message' name='message' type="text" required />
-									<Button type='submit' label={'Sign'} />
+									<Button type='submit' flavor='primary'>Sign</Button>
 								</div>
 								
 							</form>
@@ -88,7 +90,7 @@ export default function Guestbook() {
 					) : (
 						<div>
 							<p className="mb-2">To share a message to a future viewer of my site, please login with GitHub.</p>
-							<Button onClick={()=>{signIn('github')}} label="Sign In" />
+							<Button onClick={()=>{signIn('github')}} flavor="primary">Sign in</Button>
 							<p className='text-sm text-gray-600 mt-2 '>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
 						</div>
 					)

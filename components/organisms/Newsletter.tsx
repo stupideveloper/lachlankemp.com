@@ -1,12 +1,13 @@
 import React,{ useEffect, useState } from 'react';
 import { motion,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
-import Emoji from '../Emoji'
+import Emoji from '../functional/Emoji'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import Button from 'components/atoms/Button';
 import Input from 'components/atoms/Input';
 import InputLabel from 'components/atoms/InputLabel';
+
 const isSubscribedAtom = atomWithStorage('isSubscribed', false)
 const emailIdAtom = atomWithStorage('emailIdTemp', '')
 
@@ -57,12 +58,17 @@ function Form({submitForm, loading : isLoading}) {
 	return (
 		<>
 		<form onSubmit={submitForm} className='block md:flex gap-x-4 items-end'>
-			<div className='mt-6 md:mt-0 gap-x-4 sm:flex	items-end'>
+			<div className='mt-6 md:mt-0 gap-x-4 sm:flex	items-end mr-auto'>
 				<div>
 					<InputLabel htmlFor='email'>Email</InputLabel>
 					<Input id='email' name='email' type="email" required />
 				</div>
-				<Button type='submit' flavor='primary' isloading={false}>Subscribe</Button>
+				<div className='mr-auto block flex-col gap-4'>
+				<Button flavor='primary' isloading={isLoading}>Subscribe</Button>
+
+
+				</div>
+				
 			</div>
 			 
 		</form>
@@ -144,7 +150,7 @@ export default function NewsletterSignup() {
 				<h2 className="text-3xl font-bold">
 					Be sure to check your email!
 				</h2>
-				<p className="mt-1 text-gray-500 text-xl mb-6" >It looks like you haven&apos;t confirmed your subscription yet, check your inbox (and junk) for the email. If you entered the wrong email click <button onClick={trySignupAgain} className='text-blue-600 bg-blue-100 rounded'>here</button> to sign up again.</p>
+				<p className="mt-1 text-gray-500 text-xl mb-6" >It looks like you haven&apos;t confirmed your subscription yet, check your inbox (and junk) for the email. If you entered the wrong email click <button onClick={trySignupAgain} className='highlighted'>here</button> to sign up again.</p>
 				{isSubscribed || showingMessage ? (
 					<div>
 						<p>{responseMessage}</p>

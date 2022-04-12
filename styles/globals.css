@@ -1,6 +1,37 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .highlighted {
+    @apply bg-blue-200 text-blue-700 rounded-md;
+  }
+}
+
+@layer base {
+  
+  input {
+    @apply py-3 px-4 w-full hover:border-gray-300  border-2 border-gray-200 bg-gray-100 hover:ring-offset-2 hover:ring-2 ring-gray-500 transition-all rounded-lg !important; 
+  }
+}
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply transition-all rounded-lg relative flex h-full items-center justify-center whitespace-nowrap space-x-3 px-8 py-3;
+  }
+  .btn-secondary {
+    @apply hover:border-gray-300 active:border-transparent border-2 border-gray-200 bg-gray-100 hover:ring-offset-2 hover:ring-2 ring-gray-500;
+  }
+  .btn-primary {
+    @apply hover:border-blue-500 active:border-transparent border-2 border-blue-500 bg-blue-400 hover:ring-offset-2 hover:ring-2 ring-blue-500;
+  }
+  .btn-ghost {
+    @apply hover:border-gray-300 active:border-transparent border-2 border-transparent  hover:ring-offset-2 hover:ring-2 ring-gray-500;
+  }
+
+
+}
 
 .full-bleed {
   width: 100% !important;
@@ -22,3 +53,13 @@
 .skip-to-content:focus {
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
+@keyframes border-dance {
+  0% {
+    background-position: left top, right bottom, left bottom, right   top;
+  }
+  100% {
+    background-position: left 15px top, right 15px bottom , left bottom 15px , right   top 15px;
+  }
+}
+
