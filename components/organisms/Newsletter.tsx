@@ -1,7 +1,6 @@
 import React,{ useEffect, useState } from 'react';
 import { motion,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
-import Emoji from '../functional/Emoji'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 import Button from 'components/atoms/Button';

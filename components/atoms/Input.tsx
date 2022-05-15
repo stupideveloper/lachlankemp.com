@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactElement, useState } from "react"
+import { useState } from "react"
 interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement> {}
 
 export default function Input({children, ...props} : Props) {

@@ -4,8 +4,6 @@ import fetcher from "lib/utils/fetcher";
 import { ExternalLinkIcon, CheckIcon, SelectorIcon } from "@heroicons/react/outline";
 import { Listbox, Transition } from '@headlessui/react'
 import { useState, Fragment } from "react";
-import Link from "next/link";
-import CountUpNumber from "components/functional/CountUpNumber";
 
 const timeframes = [
   { name: 'Day' },

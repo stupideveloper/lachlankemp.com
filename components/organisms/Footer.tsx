@@ -1,6 +1,5 @@
 import fullbleedstyles from '../../styles/fullbleed.module.css'
 import Contact from './Contact'
-import Link from 'next/link'
 import LatestCommit from 'components/atoms/LatestCommit'
 export default function Footer() {
 	return <footer>
