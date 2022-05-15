@@ -49,7 +49,7 @@ function Hand() {
 			initial="static"
 			variants={waveStates}
 		>
-			<Image src="/images/wave.svg" width={150} height={150} />
+			<Image src="/images/wave.svg" alt="Waving hand emoji" width={150} height={150} />
 		</motion.div>
 	)
 }

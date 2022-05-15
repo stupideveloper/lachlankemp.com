@@ -24,7 +24,7 @@ export default function Home() {
             <motion.div initial={{y:10, opacity: 0}} animate={{ y: 0, opacity: 1}} transition={{duration: 0.6, delay:0.6}} className='relative'>
               <Image placeholder='blur' src={me} className='object-cover rounded-full' alt='Picture of Lachlan Kemp' width={125} height={125} />
               <div className='absolute bottom-[4%] right-[3%]'>
-              <Image src="/images/wave.svg" width={30} height={30}  />
+              <Image src="/images/wave.svg" alt="Waving hand emoji" width={30} height={30}  />
 
               </div>
             </motion.div>
