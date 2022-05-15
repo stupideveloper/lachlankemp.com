@@ -1,6 +1,5 @@
 import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github";
-import { withSentry } from "@sentry/nextjs";
 const handler = NextAuth({
   providers: [
     GitHubProvider({
@@ -10,4 +9,4 @@ const handler = NextAuth({
   ],
   secret: process.env.NEXTAUTH_SECRET,
 })
-export default withSentry(handler)
+export default handler;

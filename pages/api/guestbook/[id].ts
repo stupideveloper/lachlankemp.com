@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 import prisma from '../../../lib/prisma';
-import { withSentry } from "@sentry/nextjs";
 
 async function handler(
   req: NextApiRequest,
@@ -62,4 +61,4 @@ async function handler(
 
   return res.send('Method not allowed.');
 }
-export default withSentry(handler);
+export default handler;

@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-import { withSentry } from "@sentry/nextjs";
 
 const apiKey = process.env.BUTTONDOWN_API_KEY;
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -35,4 +34,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	}
 };
 
-export default withSentry(handler);
+export default handler;
