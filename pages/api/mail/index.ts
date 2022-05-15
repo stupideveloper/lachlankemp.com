@@ -1,15 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next"
+import { withSentry } from "@sentry/nextjs";
 
-//const apiKey = process.env.CONVERTKIT_API_KEY;
 const apiKey = process.env.BUTTONDOWN_API_KEY;
-
-//const formId = process.env.CONVERTKIT_FORM_ID;
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') return res.status(405).end('Method Not Allowed')
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { email } = JSON.parse(req.body);
 	if (!email) {
 		return res.status(400).json({ error: 'Email (email) is required', code: 400 });
@@ -41,3 +34,5 @@ export default async function handler(
 		return res.status(500).json({ message: error.message || error.toString() });
 	}
 };
+
+export default withSentry(handler);

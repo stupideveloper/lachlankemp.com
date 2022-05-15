@@ -21,15 +21,15 @@ export default function Contact() {
 			<div className='flex gap-x-4'>
 				
 				<a href="mailto:me@lachlankemp.com" aria-label='Email button'> 
-					<InboxIcon className='w-10 h-10' />
+					<InboxIcon className='w-10 h-10 stroke-slate-500 hover:stroke-slate-400 transition-colors' />
 				</a>	
 				<a href="tel:0444502950" aria-label='Phone call button'>
-					<PhoneIcon className='w-10 h-10' />
+					<PhoneIcon className='w-10 h-10 stroke-slate-500 hover:stroke-slate-400 transition-colors' />
 				</a>
 			
 
 				<a target="_blank" rel="noreferrer" href="https://github.com/stupideveloper" aria-label='Github Profile Link'> 
-					<GithubIcon className='w-10 h-10 fill-gray-700' />
+					<GithubIcon className='w-10 h-10 fill-slate-500 hover:fill-slate-400 transition-colors' />
 				</a>	
 			</div>
 		</div>

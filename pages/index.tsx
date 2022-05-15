@@ -1,34 +1,43 @@
-import Header from '../components/sections/Header'
-import MainWrapper from "../components/MainWrapper";
+import Header from '../components/organisms/Header'
+import MainWrapper from "../components/templates/MainWrapper";
 import fullbleedstyles from '../styles/fullbleed.module.css'
-import Projects from '../components/sections/Projects';
 import Image from 'next/image';
-import Contact from '../components/sections/Contact';
-import NewsletterSignup from '../components/sections/Newsletter';
-import RecommendedActions from '../components/sections/RecommendationEngine';
-import Head from 'components/Head';
-import headStyles from '../styles/headStyles.module.css';
+import NewsletterSignup from '../components/organisms/Newsletter';
+import RecommendedActions from '../components/organisms/RecommendationEngine';
+import Head from 'components/functional/Head';
+import { motion } from 'framer-motion';
+import Banner from 'components/molecules/Banner';
+
+import me from 'public/images/me.jpeg'
 
 export default function Home() {
   return (
-    <div>
-      <div className={`rounded-b-[10%] md:rounded-b-[25%] ${headStyles.head} ${fullbleedstyles.wrapper}  mb-10 bg-black`}>
-        <div className="full-bleed ">
-          <Header linkColor="#fff" />
-        </div>
+    <div className='bg-slate-900'>
+      <Banner />
+      <div className={`rounded-b-[10%] md:rounded-b-[25%] ${fullbleedstyles.wrapper} bg-gradient-to-b from-indigo-800 to-slate-900 mb-10 bg-dark`}>
+        <motion.div initial={{y:-10, opacity: 0}} animate={{ y: 0, opacity: 1}} transition={{duration: 0.6, delay:0.2}} className="full-bleed ">
+          <Header darker />
+        </motion.div>
       
-        <div className='text-center pt-8 pb-20 px-8 text-white ' id='skip'>
-          <div className='flex justify-center mb-4'>
-            <Image src='https://res.cloudinary.com/lkemp/image/upload/c_fill,g_face:center,h_400,r_max,w_400,y_860/v1642393734/me_0.75x_lcifje.png' className='' alt='Picture of me' width={125} height={125} quality={100} />
+        <div className='text-center pt-8 pb-28 px-8 md:px-12 sm:px-20 text-light ' id='skip'>
+          <div className='flex justify-center mb-4 '>
+            <motion.div initial={{y:10, opacity: 0}} animate={{ y: 0, opacity: 1}} transition={{duration: 0.6, delay:0.6}} className='relative'>
+              <Image placeholder='blur' src={me} className='object-cover rounded-full' alt='Picture of Lachlan Kemp' width={125} height={125} />
+              <div className='absolute bottom-[4%] right-[3%]'>
+              <Image src="/images/wave.svg" width={30} height={30}  />
+
+              </div>
+            </motion.div>
+   
           </div>
-          <h1 className='text-5xl font-bold mb-2'>Hi, I&apos;m Lachlan!</h1>
-          <p className='text-2xl text-gray-300 mb-4'>Building robots and applications for the web.</p>
+          <motion.h1 initial={{y:15, opacity: 0}} animate={{ y: 0, opacity: 1}} transition={{duration: 0.6}} className='text-5xl font-bold mb-2'>Welcome to the internet residence of Lachlan Kemp.</motion.h1>
+          <motion.p initial={{y:10, opacity: 0}} animate={{ y: 0, opacity: 1}} transition={{duration: 0.6, delay:0.2}} className='text-2xl text-slate-300 mb-4'>Building robots and applications for the web.</motion.p>
           <RecommendedActions />
         </div>
       </div>
       <MainWrapper>
         <Head />
-        <Projects />
+        
         <NewsletterSignup />
        
       </MainWrapper>

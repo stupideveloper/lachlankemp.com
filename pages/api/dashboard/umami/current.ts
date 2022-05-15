@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { sub } from 'date-fns'
 
 async function handler(
   req: NextApiRequest,

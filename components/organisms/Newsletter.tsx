@@ -7,14 +7,15 @@ import { atomWithStorage } from 'jotai/utils'
 import Button from 'components/atoms/Button';
 import Input from 'components/atoms/Input';
 import InputLabel from 'components/atoms/InputLabel';
+import Image from 'next/image';
 
 const isSubscribedAtom = atomWithStorage('isSubscribed', false)
 const emailIdAtom = atomWithStorage('emailIdTemp', '')
 
 
 const waveStates = {
-  wave: { rotate: 0,  },
-	static: { rotate: 20 },
+  wave: { rotate: 20,  },
+	static: { rotate: 0 },
   unwave: { rotate: -20 }
 };
 
@@ -37,19 +38,19 @@ function Hand() {
 	return (
 		<motion.div
 			ref={ref}
-			className="text-[10rem]"
+			className="text-[9rem]"
 			style={{
-				marginBottom: '-20px',
-				marginRight: '-45px',
+				marginBottom: '-50px',
+				marginRight: '-20px',
 				paddingBottom: '20px',
-				paddingRight: '45px',
+				paddingRight: '90px',
 				display: 'inline-block',
 			}}
 			animate={handControls}
 			initial="static"
 			variants={waveStates}
 		>
-			<Emoji symbol='👋' />
+			<Image src="/images/wave.svg" width={150} height={150} />
 		</motion.div>
 	)
 }
@@ -59,7 +60,7 @@ function Form({submitForm, loading : isLoading}) {
 		<>
 		<form onSubmit={submitForm} className='block md:flex gap-x-4 items-end'>
 			<div className='mt-6 md:mt-0 gap-x-4 sm:flex	items-end mr-auto'>
-				<div>
+				<div className='mb-2 sm:mb-0'>
 					<InputLabel htmlFor='email'>Email</InputLabel>
 					<Input id='email' name='email' type="email" required />
 				</div>
@@ -72,7 +73,7 @@ function Form({submitForm, loading : isLoading}) {
 			</div>
 			 
 		</form>
-		<p className='block mt-4 text-gray-600'>No spam, you can unsubscribe at any time.</p>
+		<p className='block mt-4 text-slate-400'>No spam, you can unsubscribe at any time.</p>
 	</>
 	)
 }
@@ -150,7 +151,7 @@ export default function NewsletterSignup() {
 				<h2 className="text-3xl font-bold">
 					Be sure to check your email!
 				</h2>
-				<p className="mt-1 text-gray-500 text-xl mb-6" >It looks like you haven&apos;t confirmed your subscription yet, check your inbox (and junk) for the email. If you entered the wrong email click <button onClick={trySignupAgain} className='highlighted'>here</button> to sign up again.</p>
+				<p className="mt-1 text-slate-500 text-xl mb-6" >It looks like you haven&apos;t confirmed your subscription yet, check your inbox (and junk) for the email. If you entered the wrong email click <button onClick={trySignupAgain} className='highlighted'>here</button> to sign up again.</p>
 				{isSubscribed || showingMessage ? (
 					<div>
 						<p>{responseMessage}</p>
@@ -175,7 +176,7 @@ export default function NewsletterSignup() {
 				<h2 className="text-3xl font-bold">
 					Subscribe to my (future) newsletter
 				</h2>
-				<p className="mt-1 text-gray-500 text-xl mb-6" >Subscribe to my newsletter so when it drops, you can get emails from me about web development, tech, and early access to my new projects.</p>
+				<p className="mt-1 text-slate-400 text-xl mb-6" >Subscribe to my newsletter so when it drops, you can get emails from me about web development, tech, and early access to my new projects.</p>
 				{isSubscribed || showingMessage ? (
 					<div>
 						<p>{responseMessage}</p>

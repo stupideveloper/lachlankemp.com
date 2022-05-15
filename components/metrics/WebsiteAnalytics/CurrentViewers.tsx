@@ -3,7 +3,7 @@ import useSWR from "swr";
 import fetcher from "lib/utils/fetcher";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 
-import CountUpNumber from "components/CountUpNumber";
+import CountUpNumber from "components/functional/CountUpNumber";
 
 export default function CurrentViewers() {
 

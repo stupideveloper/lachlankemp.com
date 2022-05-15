@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { sub } from 'date-fns'
 
 async function handler(
   req: NextApiRequest,
@@ -8,7 +7,6 @@ async function handler(
 	const API_KEY = process.env.BUTTONDOWN_API_KEY;
 	const { id } = req.query;
 	if (!id) return res.status(400).json({ error: 'id is required' });
-  if (typeof id !== 'number') return res.status(400).json({ error: 'id is invalid' });
   const response = await fetch(`https://api.buttondown.email/v1/subscribers/${id}`, {
     headers: {
       Authorization: `Token ${API_KEY}`,
@@ -28,4 +26,5 @@ async function handler(
 
  
 }
+// TODO: sentry has been acting up here so I need to work on a fix.
 export default handler;

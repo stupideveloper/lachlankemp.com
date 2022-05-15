@@ -18,10 +18,10 @@ export default function List() {
 				{data?.tracks?.map((item, key) => (
 					<li key={key}>
 						<a href={item.songUrl} target="_blank" rel="noreferrer" className="flex gap-x-2 mb-6">
-							<div className="font-bold text-gray-500">{key + 1}</div>
+							<div className="font-bold text-slate-300">{key + 1}</div>
 							<div>
 								<p>{item.title}</p>
-								<p className="text-gray-600">{item.artist}</p>
+								<p className="text-slate-400">{item.artist}</p>
 							</div>
 						</a>
 					</li>

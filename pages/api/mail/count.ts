@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { sub } from 'date-fns'
+import { withSentry } from "@sentry/nextjs";
 
 async function handler(
   req: NextApiRequest,
@@ -20,4 +20,4 @@ async function handler(
 
  
 }
-export default handler;
+export default withSentry(handler);

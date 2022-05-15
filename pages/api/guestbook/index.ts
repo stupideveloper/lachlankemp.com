@@ -1,10 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { getSession } from 'next-auth/react';
 import prisma from '../../../lib/prisma';
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === 'GET') {
 		const entries = await prisma.guestbook.findMany({
 			orderBy: {
@@ -45,8 +43,8 @@ async function handler(
     });
   }
 
-	return res.status(405).end('Method Not Allowed')
+	res.status(405).end('Method Not Allowed')
 };
 
 // Thanks to @leerob [leerob.io] for some of the code
-export default handler
+export default handler;

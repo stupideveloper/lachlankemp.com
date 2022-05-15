@@ -19,13 +19,7 @@ const bigProjects = [
 		link: "https://github.com/stupideveloper/RefTracker",
 		disabled: false
 	},
-	{
-		title: "More coming soon...",
-		tags: [],
-		description: "I have more projects in the works, check back soon!",
-		image: "",
-		disabled: true
-	}
+
 ]
 const icons = [
 	{
@@ -63,17 +57,17 @@ function TechIcon({iconName}: {iconName: any}) {
 function Panel({...props}) {
 	const { project } = props
 	return (
-		<div className=" border flex flex-col shadow-sm rounded-md border-gray-200 overflow-hidden">
-			<div className=" flex flex-col justify-center py-2 px-4 border-b border-gray-200">
+		<div className=" border flex flex-col shadow-sm rounded-md border-slate-700 bg-slate-800 overflow-hidden">
+			<div className=" flex flex-col justify-center py-2 px-4 rounded-md">
 				<h3 className=" font-bold">{project.title}</h3>
-				<p className="text-gray-500 mb-4">{project.description}</p>
+				<p className="text-slate-500 mb-4">{project.description}</p>
 				<div className="flex gap-x-3">
 					{project.tags.map((tag: null | undefined, index: Key | null | undefined) => (
 						<TechIcon iconName={tag} key={index}/>
 					))}
 				</div>
 			</div>
-			<div className="w-full overflow-hidden relative border-t-gray-200">
+			<div className="w-full overflow-hidden relative">
 				{!project.disabled && (
 					<Image width={960} height={540} alt="Image including the logo of the project" src={project.image} className="w-full absolute" />
 
@@ -86,8 +80,8 @@ export default function Projects() {
 	return (
 		<div id="projects" className="scroll-mt-12">
 			<h2 className='font-bold text-3xl'>Things I&apos;ve made and are making</h2>
-      <p className='mt-1 text-gray-500 text-xl mb-6'>My little side projects, successful or not.</p>		
-			<div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 my-4">
+      <p className='mt-1 text-slate-500 text-xl mb-6'>My little side projects, successful or not.</p>		
+			<div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-4 my-4">
 				{bigProjects.map((project, index) => (
 					<div key={index}>
 						{project.disabled && (

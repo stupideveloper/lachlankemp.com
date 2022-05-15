@@ -4,7 +4,7 @@ import fetcher from "lib/utils/fetcher";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 
-import CountUpNumber from "components/CountUpNumber";
+import CountUpNumber from "components/functional/CountUpNumber";
 import Link from "next/link";
 
 export default function Subscriptions() {

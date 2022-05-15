@@ -1,11 +1,12 @@
 import Button from 'components/atoms/Button';
 import InputLabel from 'components/atoms/InputLabel';
 import Input from 'components/atoms/Input';
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../components/templates/StandardPage";
 import { useSession, signIn, signOut } from "next-auth/react"
 import fetcher from '../lib/utils/fetcher';
 import useSWR, { useSWRConfig } from 'swr';
 import { format } from 'date-fns'
+import Box from 'components/atoms/Box';
 
 
 function GuestBookItem({item, user}: {item: any, user: any}) {
@@ -23,7 +24,7 @@ function GuestBookItem({item, user}: {item: any, user: any}) {
 	return (
 		<li className="mb-6">
 			<p className="mb-2">{item.body}</p>
-			<p className="text-gray-600 text-sm">
+			<p className="text-slate-400 text-sm">
 				<span>{item.created_by}</span> 
 				<span className="mx-2">/</span> 
 				<span>{format(new Date(item.updated_at), "d MMM yyyy 'at' h:mm bb")}</span>
@@ -71,17 +72,17 @@ export default function Guestbook() {
 		<StandardPage title="Guestbook" description={`Leave a comment in my guestbook. It could be anything – information, appreciation, humor, or wisdom. Surprise me!`} url="https://lachlankemp.com/dashboard">
 			<div>
 				<h1 className="text-5xl font-black">Guestbook</h1>
-				<p className="text-xl mt-2 mb-6 text-gray-600 ">Leave a comment below. It could be anything – information, appreciation, humor, or wisdom. Surprise me!</p>
+				<p className="subtitle">Leave a comment below. It could be anything – information, appreciation, humor, or wisdom. Surprise me!</p>
 			</div>
-			<div className="mt-4 p-4 bg-blue-100 rounded-lg">
-				<h2 className="text-2xl font-bold">Sign the Guestbook</h2>
+			<Box>
+				<h2 className="text-2xl font-bold ">Sign the Guestbook</h2>
 				{
 					session ? (
 						<div>
-							as {session.user?.name}
+							<p>as {session.user?.name}</p>
 							<form onSubmit={sendData} className='block md:flex gap-x-4 items-end'>
-								<div className='mt-2 gap-x-4 sm:flex	items-end'>
-									<Input style={{background: 'transparent', width: '100%'}} placeholder='Your message' id='message' name='message' type="text" required />
+								<div className='mt-2 gap-x-2 sm:flex items-end'>
+									<Input className='sm:mb-0 mb-2' style={{background: 'transparent', width: '100%'}} placeholder='Your message' id='message' name='message' type="text" required />
 									<Button type='submit' flavor='primary'>Sign</Button>
 								</div>
 								
@@ -91,12 +92,12 @@ export default function Guestbook() {
 						<div>
 							<p className="mb-2">To share a message to a future viewer of my site, please login with GitHub.</p>
 							<Button onClick={()=>{signIn('github')}} flavor="primary">Sign in</Button>
-							<p className='text-sm text-gray-600 mt-2 '>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
+							<p className='text-sm text-slate-400 mt-2 '>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
 						</div>
 					)
 				}
 			
-			</div>
+			</Box>
 			<div className="mt-8">
 				{!error && !entries && <p>Loading Data...</p>}
 				<ul>

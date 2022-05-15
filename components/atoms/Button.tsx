@@ -19,8 +19,7 @@ function getClass(flavor) {
 			return 'btn-secondary';
 	} 
 }
-export default function Button(props : Props) {
-	const { flavor, isloading, children } = props;
+export default function Button({ flavor, isloading, children, ...props } : Props) {
 	const btnClass = getClass(flavor)
 	
 	return (
