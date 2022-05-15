@@ -30,6 +30,7 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
+  target: 'experimental-serverless-trace'
 };
 
 // Make sure adding Sentry options is the last code to run before exporting, to
