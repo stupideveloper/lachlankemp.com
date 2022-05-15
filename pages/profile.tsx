@@ -1,6 +1,5 @@
 import StandardPage from "components/templates/StandardPage";
 import { useSession } from "next-auth/react";
-import { subDays, formatDistance } from "date-fns";
 
 
 export default function Profile() {
