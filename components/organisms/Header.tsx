@@ -2,9 +2,6 @@ import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import fullbleedstyles from "../../styles/fullbleed.module.css";
 import React, { useState } from 'react'
-import { AnimatePresence, motion } from "framer-motion";
-import { debounce } from 'lodash-es'
-import { useAuth, UserButton, useUser } from '@clerk/nextjs';
 
 function HeaderLink({children} : {linkColor?: string, children?: React.ReactNode}) {
 	return (
@@ -75,7 +72,6 @@ function ContactElement() {
 }
 export default function Header({linkColor = "", darker} : {linkColor?: string, darker?: boolean}) {
 	const [isContactVisible, setIsContactVisible] = useState(false)
-  const { isLoaded, userId, sessionId, getToken } = useAuth();
 	return (
 		<header className={`px-8 `}>
 			<div className={fullbleedstyles.wrapper}>
