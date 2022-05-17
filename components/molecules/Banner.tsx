@@ -16,7 +16,7 @@ function ClientOnly() {
 				<p>Welcome to the 3rd edition of <code>lachlankemp.com</code>.</p>
 			</div>
 			<div className='absolute right-8'>
-				<button onClick={close}>
+				<button onClick={close} aria-label="close">
 					<XIcon width={25} />
 				</button>
 				
