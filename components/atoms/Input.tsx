@@ -1,8 +1,15 @@
 import { useState } from "react"
-interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement> {}
+import Skeleton from 'react-loading-skeleton'
 
-export default function Input({children, ...props} : Props) {
+interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement> {
+	showskeleton?: boolean;
+}
+
+export default function Input({children, showskeleton, ...props} : Props) {
 	const [textFilled, setTextFilled] = useState(false)
+	if (showskeleton) return (
+		<Skeleton width={'100%'} height={50} />
+	)
 	return (
 		<input onChange={(event) => {
 			event.target.value.length === 0 ? setTextFilled(false) : setTextFilled(true);

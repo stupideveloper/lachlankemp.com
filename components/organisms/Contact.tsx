@@ -22,9 +22,6 @@ export default function Contact() {
 				<a href="mailto:me@lachlankemp.com" aria-label='Email button'> 
 					<InboxIcon className='w-10 h-10 stroke-slate-500 hover:stroke-slate-400 transition-colors' />
 				</a>	
-				<a href="tel:0444502950" aria-label='Phone call button'>
-					<PhoneIcon className='w-10 h-10 stroke-slate-500 hover:stroke-slate-400 transition-colors' />
-				</a>
 			
 
 				<a target="_blank" rel="noreferrer" href="https://github.com/stupideveloper" aria-label='Github Profile Link'> 

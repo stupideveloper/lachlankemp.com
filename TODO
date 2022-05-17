@@ -11,13 +11,31 @@
 
 [/] Spotify Now Playing
 
-[] Add secret nextauth
+[/] Add secret nextauth
 
 [/] Do new header
-[] Mobile Header
+[/] Mobile Header
 
 [/] Add reminder to confirm subscription / add subscribed email to localstorage
 
 [/] Add listening to section on dashboard
 
-[] Add aria labels to icons
+[/] Add aria labels to icons
+
+[] Add profile image behind mine
+
+[/] Transfer callback when switch to signin
+
+[/] Add magic link screen to login
+
+[/] Skeleton Loading
+
+[] Redirect if logged in from signup/login to profile page
+
+[/] Delete user function
+
+[/] add red important button
+
+[/] Add sign up page seo
+
+[] add littl icon to outbound links

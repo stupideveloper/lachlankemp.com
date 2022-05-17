@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai'
 import { useState, useEffect } from 'react'
 import { atomWithStorage } from 'jotai/utils'
-
+import { useUser } from '@clerk/nextjs'
 
 const isSubscribedAtom = atomWithStorage('isSubscribed', false)
 
@@ -25,12 +25,27 @@ const colorClasses = [
 ]
 
 export default function RecommendedActions() {
+	const { isLoaded, user } = useUser()
+
 	const [recommendations, setRecommendations] = useState([
 		{
 			name: 'Contact',
 			action: '#contact'
 		}
 	])
+	
+		useEffect(() => {
+			if (isLoaded && !user) {
+				var temp = [...recommendations]
+				temp.push({
+					name: 'Sign In',
+					action: '/profile'
+				})
+				setRecommendations(temp)
+			}
+		}, [isLoaded])
+	
+
 	const [isSubscribed, setIsSubscribed] = useAtom(isSubscribedAtom)
 
 	useEffect(() => {

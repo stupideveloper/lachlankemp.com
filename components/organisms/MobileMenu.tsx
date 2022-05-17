@@ -58,7 +58,7 @@ export default function MobileMenu({linkColor}: {linkColor?: string}) {
 	
 	return (
 		<>
-			{!open &&
+			{!open && 
         <button aria-label="open navigation" className="border border-solid px-3 py-1 rounded-full hover:opacity-75 md:hidden" onClick={toggleOpen}>
         	<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         		<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -81,9 +81,11 @@ export default function MobileMenu({linkColor}: {linkColor?: string}) {
           	exit="exit" 
           	variants={variants} 
           	className={`font-bold fixed px-8 h-screen top-16 bottom-0 left-0 right-0 bg-gray-900/95 rounded-3xl mt-10 z-50 py-6 border-t border-t-indigo-800 text-white`}>
-          	<MenuItem><Link href="/dashboard"><a onClick={toggleOpen} className={"p-3 block"}>Dashboard</a></Link></MenuItem>
+          	<MenuItem><Link href="/"><a onClick={toggleOpen} className={"p-3 block"}>Home</a></Link></MenuItem>
+						<MenuItem><Link href="/dashboard"><a onClick={toggleOpen} className={"p-3 block"}>Dashboard</a></Link></MenuItem>
 						<MenuItem><Link href="/guestbook"><a onClick={toggleOpen} className={"p-3 block"}>Guestbook</a></Link></MenuItem>
-						<MenuItem><Link href="/#projects"><a onClick={toggleOpen} className={"p-3 block"}>Projects</a></Link></MenuItem>
+						<MenuItem><Link href="/profile"><a onClick={toggleOpen} className={"p-3 block"}>Profile</a></Link></MenuItem>
+						<br />
 						<MenuItem><Link href="/mailto:me@lachlankemp.com"><a onClick={toggleOpen} className={"p-3 block"}>Email</a></Link></MenuItem>
 
           	<MenuItem><Link href="https://github.com/stupideveloper"><a onClick={toggleOpen} className={"p-3 block"}>GitHub</a></Link></MenuItem>

@@ -1,15 +1,14 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
+import type { NextApiResponse } from 'next';
 import prisma from '../../../lib/prisma';
+import AuthedRequest from 'lib/auth/authedRequest';
+import { withAuth } from '@clerk/nextjs/api';
 
 async function handler(
-  req: NextApiRequest,
+  req: AuthedRequest,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req });
 
   const { id } = req.query;
-  const { email } = session.user;
 
   const entry = await prisma.guestbook.findUnique({
     where: {
@@ -22,11 +21,12 @@ async function handler(
       id: entry.id.toString(),
       body: entry.body,
       created_by: entry.created_by,
-      updated_at: entry.updated_at
+      updated_at: entry.updated_at,
+      sender_name: entry.sender_name
     });
   }
 
-  if (!session || email !== entry?.email) {
+  if (!req.auth || req.auth.userId !== entry?.created_by) {
     return res.status(403).send('Unauthorized');
   }
 
@@ -37,7 +37,7 @@ async function handler(
       }
     });
 
-    return res.status(204).json({});
+    return res.status(200).json({});
   }
 
   if (req.method === 'PUT') {
@@ -61,4 +61,4 @@ async function handler(
 
   return res.send('Method not allowed.');
 }
-export default handler;
+export default withAuth(handler);

@@ -20,7 +20,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     );
 
 		const data = await response.json();
-    console.log(data)
     if (response.status >= 400) {
       return res.status(400).json({
         message: `There was an error subscribing to the newsletter.`,
