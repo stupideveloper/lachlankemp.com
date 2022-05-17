@@ -1,7 +1,7 @@
 import type { NextApiResponse } from 'next'
 import prisma from '../../../lib/prisma';
 import { withAuth } from '@clerk/nextjs/api'
-import AuthedRequest from 'lib/auth/authedRequest';
+import AuthedRequest from '../../../lib/auth/';
 
 const handler = async (req: AuthedRequest, res: NextApiResponse) => {
   const API_KEY = process.env.CLERK_API_KEY
