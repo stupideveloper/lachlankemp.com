@@ -4,12 +4,12 @@ import fullbleedstyles from '../styles/fullbleed.module.css'
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-import RecommendedActions from '../components/organisms/RecommendationEngine';
 import Head from 'components/functional/Head';
 import Banner from 'components/molecules/Banner';
 
 import me from 'public/images/me.jpeg'
-const NewsletterChecker = dynamic(() => import('../components/organisms/Newsletter/Checker'), { ssr: false });
+const NewsletterChecker = dynamic(() => import('../components/organisms/Newsletter/Checker'), { ssr: false })
+const RecommendedActions = dynamic(() => import('../components/organisms/RecommendationEngine'), { ssr: false })
 
 export default function Home() {
   return (

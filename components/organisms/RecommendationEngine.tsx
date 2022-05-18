@@ -1,8 +1,5 @@
-import { useAtom } from 'jotai'
 import { useState, useEffect } from 'react'
-import { atomWithStorage } from 'jotai/utils'
-
-const isSubscribedAtom = atomWithStorage('isSubscribed', false)
+import useStickyState from 'lib/hooks/useStickyState'
 
 const colorClasses = [
 	{
@@ -32,9 +29,7 @@ export default function RecommendedActions() {
 		}
 	])
 	
-	
-
-	const [isSubscribed, setIsSubscribed] = useAtom(isSubscribedAtom)
+	const [isSubscribed, setIsSubscribed] = useStickyState(false, 'isSubscribed')
 
 	useEffect(() => {
 		var temp = [...recommendations]
