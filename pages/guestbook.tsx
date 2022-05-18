@@ -46,13 +46,12 @@ function GuestBookItem({item, user}: {item: any, user: any}) {
 		</li>
 	)
 }
-// TODO: CONNECT TO HASURA
 
 export default function Guestbook() {
   const { mutate } = useSWRConfig();
 	const { data: entries, error } = useSWR<any>('/api/guestbook', fetcher)
   const { isLoaded, userId, sessionId, getToken } = useAuth();
-	const { user } = useUser()
+	const { user, isSignedIn } = useUser()
 	const router = useRouter()
 
 	
@@ -81,7 +80,7 @@ export default function Guestbook() {
 			<Box>
 				<h2 className="text-2xl font-bold ">Sign the Guestbook</h2>
 				{
-					isLoaded ? (
+					isSignedIn ? (
 						<div>
 							<p>as {user?.firstName}</p>
 							<form onSubmit={sendData} className='block md:flex gap-x-4 items-end'>

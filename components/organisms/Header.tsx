@@ -76,7 +76,6 @@ function ContactElement() {
 export default function Header({linkColor = "", darker} : {linkColor?: string, darker?: boolean}) {
 	const [isContactVisible, setIsContactVisible] = useState(false)
 	const windowSize = useWindowSize()
-	console.log(windowSize)
 
 	return (
 		<header className={`px-8 `}>
