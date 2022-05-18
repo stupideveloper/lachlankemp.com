@@ -2,7 +2,6 @@ import type { NextApiResponse } from 'next';
 import prisma from '../../../lib/prisma';
 import AuthedRequest from 'lib/auth/authedRequest';
 import { withAuth } from '@clerk/nextjs/api';
-import guestbook from '.';
 
 async function handler(
   req: AuthedRequest,

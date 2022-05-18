@@ -1,7 +1,10 @@
 import Link from "next/link";
-import MobileMenu from "./MobileMenu";
 import fullbleedstyles from "../../styles/fullbleed.module.css";
-import React, { useState } from 'react'
+import { useState } from 'react'
+import dynamic from "next/dynamic";
+import useWindowSize from "lib/hooks/useWindowSize";
+
+const MobileMenu = dynamic(() => import('./MobileMenu'))
 
 function HeaderLink({children} : {linkColor?: string, children?: React.ReactNode}) {
 	return (
@@ -72,14 +75,18 @@ function ContactElement() {
 }
 export default function Header({linkColor = "", darker} : {linkColor?: string, darker?: boolean}) {
 	const [isContactVisible, setIsContactVisible] = useState(false)
+	const windowSize = useWindowSize()
+	console.log(windowSize)
+
 	return (
 		<header className={`px-8 `}>
 			<div className={fullbleedstyles.wrapper}>
 				<nav className={`flex flex-row py-4 text-light  rounded-full ${darker ? "bg-indigo-900/50" : "bg-indigo-900/25"} border border-indigo-600 px-8 mt-4 mb-4 `}>
 					<a href="#skip" className="skip-to-content">Skip to content</a>
 					<div className="flex-1 flex justify-start items-center gap-x-4">
-						
-						<MobileMenu />
+						{(windowSize.width <= 768 && (
+							<MobileMenu />
+						))}
 						<HeaderLink ><Link href={'/profile'}>Profile</Link></HeaderLink>
 						<HeaderLink ><Link href={'/dashboard'}>Dashboard</Link></HeaderLink>
 			

@@ -6,7 +6,7 @@ import fetcher from '../lib/utils/fetcher';
 import useSWR, { useSWRConfig } from 'swr';
 import { format } from 'date-fns'
 import Box from 'components/atoms/Box';
-import { useAuth, UserButton, useUser } from '@clerk/nextjs';
+import { useAuth, useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
 
 
