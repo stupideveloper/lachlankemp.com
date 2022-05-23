@@ -85,7 +85,7 @@ export default function NewsletterSignup() {
 		return (
 		<div id='subscribe' className='scroll-mt-12 mt-8 flex place-content-between items-center'>
 			<div className='max-w-xl'>
-				<h2 className="text-3xl font-bold">
+				<h2>
 					Make sure to check your email!
 				</h2>
 				<p className="mt-1 text-slate-500 text-xl mb-6" >Be sure to check your email (and junk) to confirm your subscription. If you entered the wrong email click <button onClick={trySignupAgain} className='highlighted'>here</button> to sign up again.</p>
@@ -101,7 +101,7 @@ export default function NewsletterSignup() {
 	return (
 		<div id='subscribe' className='scroll-mt-12 mt-8 flex place-content-between items-center'>
 			<div className='max-w-xl'>
-				<h2 className="text-3xl font-bold">
+				<h2>
 					Subscribe to my (future) newsletter
 				</h2>
 				<p className="mt-1 text-slate-400 text-xl mb-6" >Subscribe to my newsletter so when it drops, you can get emails from me about web development, tech, and early access to my new projects.</p>

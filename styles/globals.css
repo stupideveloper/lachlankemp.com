@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url("/fonts/SpaceGrotesk/woff2/static/SpaceGrotesk-Regular.woff2") format("woff2"),
+  url("/fonts/SpaceGrotesk/ttf/static/SpaceGrotesk-Regular.ttf") format("truetype"),
+  url("/fonts/SpaceGrotesk/woff/static/SpaceGrotesk-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url("/fonts/SpaceGrotesk/woff2/static/SpaceGrotesk-Bold.woff2") format("woff2"),
+  url("/fonts/SpaceGrotesk/ttf/static/SpaceGrotesk-Bold.ttf") format("truetype"),
+  url("/fonts/SpaceGrotesk/woff/static/SpaceGrotesk-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +25,9 @@ dialog::backdrop {
   background-color: #00000082;
 }
 
+h1 {
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "zero", "pnum", "lnum", "kern", "frac";
+}
 @layer utilities {
   .highlighted {
     @apply bg-indigo-200 text-indigo-700 rounded-md;
@@ -14,11 +35,15 @@ dialog::backdrop {
 }
 
 @layer base {
+  body {
+    @apply font-body;
+  }
   h1 {
-    @apply text-slate-100
+    @apply text-slate-100 font-display tracking-extra font-bold; 
+    
   }
   h2 {
-    @apply text-indigo-300
+    @apply text-indigo-300 font-display font-bold text-3xl;
   }
   p {
     @apply text-light

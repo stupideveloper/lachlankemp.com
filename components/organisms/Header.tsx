@@ -73,14 +73,13 @@ function HeaderLink({children} : {linkColor?: string, children?: React.ReactNode
 function ContactElement() {
 	return <></>
 }
-export default function Header({linkColor = "", darker} : {linkColor?: string, darker?: boolean}) {
+export default function Header({linkColor = "", darker, pad = true} : {linkColor?: string, darker?: boolean, pad?: boolean}) {
 	const [isContactVisible, setIsContactVisible] = useState(false)
 	const windowSize = useWindowSize()
 
 	return (
-		<header className={`px-8 `}>
-			<div className={fullbleedstyles.wrapper}>
-				<nav className={`flex flex-row py-4 text-light  rounded-full ${darker ? "bg-indigo-900/50" : "bg-indigo-900/25"} border border-indigo-600 px-8 mt-4 mb-4 `}>
+		<header className={`pt-8 `}>
+				<nav className={`flex flex-row py-4 text-light  rounded-full ${darker ? "bg-indigo-900/50" : "bg-indigo-900/25"} border border-indigo-600 px-8 mb-4 `}>
 					<a href="#skip" className="skip-to-content">Skip to content</a>
 					<div className="flex-1 flex justify-start items-center gap-x-4">
 						{(windowSize.width <= 768 && (
@@ -104,7 +103,6 @@ export default function Header({linkColor = "", darker} : {linkColor?: string, d
 
 					</div>
 				</nav>
-			</div>
 		</header>
 	)
 }

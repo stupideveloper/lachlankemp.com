@@ -53,7 +53,7 @@ export default function RecommendedActions() {
 	return (
 		<div>
 			<p className='text-slate-300 mb-2'>Things to do:</p>
-			<div className='flex gap-x-2 justify-center'>
+			<div className='flex gap-x-2'>
 				{recommendations.slice(0,3).map((recommendation, index) => (
 					<div key={index}>
 						<a href={recommendation.action} className={`${colorClasses[index].bg} ${colorClasses[index].text} ${colorClasses[index].hover} rounded-full opacity-80 transition hover:opacity-100  px-2 py-1`}>{recommendation.name}</a>

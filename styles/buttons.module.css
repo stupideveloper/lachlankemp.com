@@ -1,6 +1,6 @@
 /* Buttons */
 .btn {
-	@apply transition-all rounded-lg relative flex h-full items-center justify-center whitespace-nowrap space-x-3 px-8 py-3;
+	@apply transition-all rounded-lg relative flex h-full items-center justify-center whitespace-nowrap space-x-3 px-8 py-3 font-display;
 }
 .secondary {
 	@apply hover:border-slate-400 active:border-transparent border-2 border-slate-500 bg-slate-600 text-light hover:outline-offset-2 hover:outline outline-slate-600;
@@ -12,5 +12,5 @@
 	@apply hover:border-slate-500 active:border-transparent border-2 border-transparent  text-light hover:outline-offset-2 hover:outline outline-slate-600;
 }
 .danger {
-	@apply hover:border-red-500 active:border-transparent border-2 border-red-600 bg-red-700 text-light hover:outline-offset-2 hover:outline outline-red-600;
+	@apply hover:border-red-500 active:border-transparent border-2 border-red-600 bg-red-700 text-light hover:outline-offset-2 hover:outline outline-red-600 font-bold;
 }

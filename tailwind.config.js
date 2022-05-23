@@ -4,7 +4,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",  
   ],
   theme: {
+    fontFamily: {
+      'body': ['Inter', 'sans-serif'],
+      'display': [ 'SpaceGrotesk', 'sans-serif'],
+    },
     extend: {
+      letterSpacing: {
+        extra: '-0.15rem',
+        ultra: '-0.32rem'
+      },
       colors: {
         indigo: {
           200: '#C7D2FE',
