@@ -9,3 +9,21 @@
 [/] Theme colour
 
 [] No-js warning
+
+[] Fix style blocking	
+
+[] Auth loading states
+
+[] Logout auth
+
+[] Automatic Redirects if authed
+
+[] Name inputs
+
+[] Github Login
+
+[] Setup callbacks
+
+--- FUTURE ---
+[] Custom ui for Magic Auth
+[] Web3 Auth

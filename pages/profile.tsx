@@ -1,27 +1,24 @@
 import StandardPage from "components/templates/StandardPage";
-import { SignedIn, useUser, useClerk } from "@clerk/nextjs";
 import Button from "components/atoms/Button";
-import Router, { useRouter } from "next/router";
-import { withServerSideAuth } from "@clerk/nextjs/ssr";
-import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import Skeleton from "react-loading-skeleton";
 import Box from "components/atoms/Box";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import ButtonGroup from "components/atoms/ButtonGroup";
+import useAuth from "lib/hooks/useAuth";
 
 
 function DeleteModal({isOpen, setIsOpen}) {
-  const { signOut } = useClerk();
   const router = useRouter();
-  async function deleteAccount() {
-    await signOut();
-    router.push('/auth/sign-in?callback=/profile');
-    const response = await fetch('/api/auth/user', {
-      method: 'DELETE',
-    })
-    const data = await response.json()
-  }
+  // async function deleteAccount() {
+  //   await signOut();
+  //   router.push('/auth/sign-in?callback=/profile');
+  //   const response = await fetch('/api/auth/user', {
+  //     method: 'DELETE',
+  //   })
+  //   const data = await response.json()
+  // }
   return (
     <Dialog className="relative z-50" open={isOpen} onClose={() => setIsOpen(false)}>
 			<div className="fixed inset-0 bg-black/90" aria-hidden="true" />
@@ -38,7 +35,7 @@ function DeleteModal({isOpen, setIsOpen}) {
 							will be permanently removed.
 						</p>
 						<ButtonGroup>
-							<Button flavor="danger" onClick={deleteAccount}>Deactivate</Button>
+							{/* <Button flavor="danger" onClick={deleteAccount}>Deactivate</Button> */}
 							<Button flavor="ghost" onClick={() => setIsOpen(false)}>Cancel</Button>
 						</ButtonGroup>
 					</Box>
@@ -49,10 +46,20 @@ function DeleteModal({isOpen, setIsOpen}) {
 }
 
 export default function Profile() {
-  const { user, isLoaded } = useUser();
-  const { signOut } = useClerk();
+  const { user, loading, error } = useAuth();
   const router = useRouter();
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false)
+
+  useEffect(()=>{
+    if (loading! && !user) {
+      router.push('/auth/signup')
+    }
+  },[])
+
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{JSON.stringify(error)}</div>;
+ 
 
   return (
     <StandardPage
@@ -62,9 +69,8 @@ export default function Profile() {
     >
      
 			<DeleteModal isOpen={deleteModalOpen} setIsOpen={setDeleteModalOpen} />
-      <SignedIn>
         <div className="flex flex-col">
-          {!isLoaded && (
+          {loading && (
             <>
               <Skeleton
                 width={"14rem"}
@@ -76,34 +82,34 @@ export default function Profile() {
               <Skeleton height={20} width={200} className={"mb-2"} />
             </>
           )}
-          {isLoaded && (
+          {!loading && (
             <>
               <div>
                 <img
-                  src={user?.profileImageUrl}
+                  src={user?.picture}
                   className="h-56 fadeIn rounded-3xl mb-2"
-                  alt={`${user?.firstName}'s profile picture`}
+                  alt={`${user?.name}'s profile picture`}
                 />
               </div>
 
-              <h1 className="text-5xl font-black">{user?.fullName}</h1>
-              <p className="mb-2">{user?.primaryEmailAddress.emailAddress}</p>
+              <h1 className="text-5xl font-black">{user?.name}</h1>
+              <p className="mb-2">{user.email}</p>
             </>
           )}
 
           <ButtonGroup>
             <Button
-              showskeleton={!isLoaded}
+              showskeleton={loading}
               flavor="secondary"
               onClick={async () => {
-                await signOut();
-                router.replace("/auth/sign-in?callback=/profile");
+                // await signOut();
+                // router.replace("/auth/sign-in?callback=/profile");
               }}
             >
               Sign Out
             </Button>
             <Button
-              showskeleton={!isLoaded}
+              showskeleton={loading}
               flavor="danger"
               onClick={() => setDeleteModalOpen(true)}
             >
@@ -111,21 +117,7 @@ export default function Profile() {
             </Button>
           </ButtonGroup>
         </div>
-      </SignedIn>
     </StandardPage>
   );
 }
 
-// @ts-ignore
-export const getServerSideProps: GetServerSideProps = withServerSideAuth(
-	// @ts-ignore
-  ({ req, resolvedUrl }) => {
-    const { sessionId } = req.auth;
-    if (!sessionId) {
-      return {
-        redirect: { destination: "/auth/sign-in?callback=" + resolvedUrl },
-      };
-    }
-    return { props: {} };
-  }
-);

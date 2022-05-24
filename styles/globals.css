@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
 
 @font-face {
@@ -14,12 +18,6 @@
   url("/fonts/SpaceGrotesk/woff/static/SpaceGrotesk-Bold.woff") format("woff");
   font-weight: 700;
 }
-
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 dialog::backdrop {
   background-color: #00000082;
@@ -51,7 +49,12 @@ h1 {
   input {
     @apply text-light py-3 px-4 w-full hover:border-slate-500  border-2 border-slate-600 bg-slate-700 hover:outline-offset-2 hover:outline outline-slate-600 transition-all rounded-lg !important; 
   }
- 
+  select {
+    @apply bg-slate-800 rounded-lg
+  }
+  a.link {
+    @apply text-blue-400
+  }
 }
 @layer components {
   /* Code */
@@ -64,7 +67,9 @@ h1 {
   .subtitle {
     @apply text-xl mt-2 mb-6 text-slate-400 
   }
-
+  .header-link > a {
+    @apply text-light;
+  }
 }
 
 .full-bleed {

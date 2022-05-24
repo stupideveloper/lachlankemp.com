@@ -8,7 +8,7 @@ const MobileMenu = dynamic(() => import('./MobileMenu'))
 
 function HeaderLink({children} : {linkColor?: string, children?: React.ReactNode}) {
 	return (
-		<span className={`hidden md:inline text-light hover:font-bold transition-all`}>
+		<span className={`hidden md:inline text-light hover:font-bold transition-all header-link`}>
 			{children}
 		</span>
 	)

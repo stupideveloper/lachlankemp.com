@@ -22,8 +22,8 @@ export default function Head({title, description, url, image, children} :  Props
 				crossOrigin=''	
 			/>
 
-			<meta content="#ffffff" name="theme-color" />
-			<meta content="#ffffff" name="msapplication-TileColor" /> 
+			<meta content="#3730A3" name="theme-color" />
+			<meta content="#3730A3" name="msapplication-TileColor" /> 
 			<link rel="icon" href="/favicon.ico" />
 
 			<meta name="robots" content="index, follow" />
