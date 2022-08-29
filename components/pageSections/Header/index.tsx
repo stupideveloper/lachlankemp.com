@@ -4,23 +4,16 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic'
 
 function OnlineLabel() {
-	// Utility to add leading zero
-	function leadingZero(n) {
-		return (n < 10? '0' : '') + n;
-	}
-	var currentDateTime = new Date()
-  var becomeOnline = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), 7, 30);
-	var becomeOffline = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), 19, 30);
-
-	if (currentDateTime > becomeOnline && currentDateTime < becomeOffline) {
-		return (
-			<p id={styles.online_label} className={styles.online}>Online</p>
-		)
-	}
+	const currentDateTime = new Date()
+  const becomeOnline = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), 7, 30);
+	const becomeOffline = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), 19, 30);
 	const hoursUntil = new Date(becomeOnline.getTime() - currentDateTime.getTime()).getHours()
+	const isOnline = currentDateTime > becomeOnline && currentDateTime < becomeOffline
 		return (
-			<p id={styles.online_label}>Online in {hoursUntil} hours</p>
+			<p id={styles.online_label} className={isOnline?styles.online:''}>{isOnline? "Online" : `Online in ${hoursUntil} hours`}</p>
 		)
+	
+
 	
 }
 
