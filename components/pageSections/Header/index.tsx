@@ -1,8 +1,7 @@
 import styles from './Header.module.scss';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic'
-
+import Menu from '../Menu'
 function OnlineLabel() {
 	const currentDateTime = new Date()
   const becomeOnline = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), 7, 30);
@@ -17,9 +16,7 @@ function OnlineLabel() {
 	
 }
 
-const Menu = dynamic(() => import('../Menu'), {
-	suspense: true
-})
+
 
 {/* Lazy Load */}
 export default function Header() {
