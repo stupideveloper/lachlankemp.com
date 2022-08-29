@@ -1,44 +1,47 @@
-import Header from '../components/organisms/Header'
-import MainWrapper from "../components/templates/MainWrapper";
-import fullbleedstyles from '../styles/fullbleed.module.css'
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
+import BigTitle from "../components/text/BigTitle";
+import AnimatedText from "../components/text/AnimatedText";
+import styles from "../styles/pages/Home.module.scss";
+import Header from "components/pageSections/Header";
+import Button from "components/forms/Button";
+import MainContent from "components/pageSections/MainContent";
+import PageWrapper from "components/pageSections/PageWrapper";
 
-import Head from 'components/functional/Head';
-import Banner from 'components/molecules/Banner';
-
-import me from 'public/images/me.jpeg'
-const NewsletterChecker = dynamic(() => import('../components/organisms/Newsletter/Checker'), { ssr: false })
-const RecommendedActions = dynamic(() => import('../components/organisms/RecommendationEngine'), { ssr: false })
+function Sparkles() {
+  return (
+    <svg className={styles.sparkles} id="a" viewBox="0 0 607.4278 590.7611">
+      <g id={styles.sparkle1}>
+  
+        <path
+          d="M251.2075,502.415C251.2075,248.7203,253.6947,251.2075,0,251.2075,253.6947,251.2075,251.2075,253.6947,251.2075,0c0,253.6947-2.4872,251.2075,251.2075,251.2075-253.6947,0-251.2075-2.4872-251.2075,251.2075Z"
+          style={{ fill: "none", stroke: "#f2f2f3", strokeMiterlimit: 10 }}
+        />
+      </g>
+      <g id={styles.sparkle2}>
+        <path
+          d="M356.2203,590.7611c0-253.6947,2.4872-251.2075-251.2075-251.2075,253.6947,0,251.2075,2.4872,251.2075-251.2075,0,253.6947-2.4872,251.2075,251.2075,251.2075-253.6947,0-251.2075-2.4872-251.2075,251.2075Z"
+          style={{ fill: "none", stroke: "#f2f2f3", strokeMiterlimit: 10 }}
+        />
+      </g>
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
-    <div className='bg-slate-900 '>
-      <Banner />
-      <div className={`rounded-br-[10%] ${fullbleedstyles.wrapper} px-8 pb-24 md:rounded-br-[25%] bg-gradient-to-b from-indigo-800 to-slate-900  bg-dark`}>
-        <Header darker pad={false} />
-        
-        <div className=' block lg:flex gap-4 pt-4 lg:pt-10'>
-          <div className='mb-4 lg:order-last w-36 sm:w-48'>
-            <Image src={me} className=' rounded-full' alt='Picture of Lachlan Kemp' width={756} height={756} />
+    <PageWrapper>
+      <div className={styles.whole_wrap}>
+        <div>
+          <Header /> 
+          <div className={styles.title_wrap}>
+            <h1>The Internet Residence of Lachlan Kemp.</h1>
           </div>
-          <div>
-            <h1 className='text-5xl mb-2 '>Welcome to the internet residence of Lachlan Kemp.</h1>
-            <p className='subtitle font-normal text-slate-300 mb-4'>Building robots and applications for the web.</p>
-            <RecommendedActions />
-          </div>
-   
         </div>
-         
+        <div className={styles.bottom_container}>
+          <p className={styles.description}>Hey there! I&apos;m Lachlan Kemp, <br /> currently creating various things with JavaScript. <br /> Contact me at me@lachlankemp.com.</p>
+          <img className={styles.logo} src="/assets/logos/logo.svg" alt="The lachlan kemp logo featuring 2, corner cut squares intersecting to form a box." />
+        </div>
       </div>
-      <MainWrapper>
-        <Head />
-        
-        <NewsletterChecker />
-       
-      </MainWrapper>
-    </div>
- 
-    
-  )
+      
+    </PageWrapper>
+  );
 }

@@ -1,11 +1,6 @@
-const moduleExports = {
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-  env: {
-    BASE_PATH: process.env.BASE_PATH,
-  },
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+}
 
-module.exports = moduleExports;
+module.exports = nextConfig

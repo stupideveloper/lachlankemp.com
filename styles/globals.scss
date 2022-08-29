@@ -1,0 +1,194 @@
+:root {
+  --light: #f6f6f4;
+  --light-transparent: hsla(60, 10%, 96%, 0.9);
+  --dark: #050a18;
+  --dark-transparent: hsla(224, 66%, 6%, 0.9);
+  --light-grey: #aaadbc;
+  --light-grey-transparent: hsla(60,10%,96%,0);
+  --dark-grey: #1f222b;
+  --dark-grey-transparent: rgba(31, 34, 43, 0.9);
+
+
+  --theme-primary: var(--dark);
+  --theme-primary-transparent: var(--dark-transparent);
+  --theme-secondary: var(--light);
+  --theme-secondary-transparent: var(--light-transparent);
+  --theme-tertiary: var(--dark-grey);
+  --theme-tertiary-transparent: var(--dark-grey);
+  --theme-card: #262626;
+  --theme-card-transparent: rgba(38,38,38,0);
+  --theme-hover: #262626;
+  --theme-hover-transparent: rgba(38,38,38,0);
+
+  /* Padding / Sizing */
+  --padding-small: 1rem;
+  --padding-medium: 2rem;
+  --padding-large: 3rem;
+  --padding-xlarge: 4rem;
+
+  --padding-container-x: var(--padding-medium);
+
+
+  /* Roundedness */
+  --rounded-small: 0.25rem;
+  --rounded-medium: 0.5rem;
+  --rounded-large: 1rem;
+  --rounded-xlarge: 1.5rem;
+  --rounded-xxlarge: 2rem;
+
+
+  /* Animation */
+  --rotate-center: rotate-center 10s linear infinite both;
+
+
+
+
+  /* Borders */
+  --border-small-width: 1px;
+  --border-medium-width: 2px;
+
+  --border-style: solid;
+  --border-color: var(--dark-grey);
+  --border-radius: var(--rounded-medium);
+  --border-radius-small: var(--rounded-small);
+  --border-radius-medium: var(--rounded-medium);
+  --border-radius-large: var(--rounded-large);
+
+  --border-standard: var(--border-medium-width) var(--border-style) var(--border-color);
+  --border-standard-transparent: var(--border-medium-width) var(--border-style) transparent;
+
+  --border-small: var(--border-small-width) var(--border-style) var(--border-color);
+
+  /* Weights */
+  --weight-thin: 100;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* Fonts */
+  --font-family-slab: "Sequel100", sans-serif;
+  --font-family-body: "Space Grotesk", sans-serif;
+
+
+
+  /* Box Shadows */
+  --fancy-inset-shadow: 0px 11.0794px 11.818px rgba(0,0,0,.1),inset 0px 0.79572px 4.77432px hsla(0,0%,100%,.25);
+
+
+  /* Object Sizings */
+  --footer-height: 5rem;
+
+  --ease-in-quad: cubic-bezier(0.55,0.085,0.68,0.53);
+  --ease-in-cubic: cubic-bezier(0.55,0.055,0.675,0.19);
+  --ease-in-quart: cubic-bezier(0.895,0.03,0.685,0.22);
+  --ease-in-quint: cubic-bezier(0.755,0.05,0.855,0.06);
+  --ease-in-expo: cubic-bezier(0.95,0.05,0.795,0.035);
+  --ease-in-circ: cubic-bezier(0.6,0.04,0.98,0.335);
+  --ease-out-quad: cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out-cubic: cubic-bezier(0.215,0.61,0.355,1);
+  --ease-out-quart: cubic-bezier(0.165,0.84,0.44,1);
+  --ease-out-quint: cubic-bezier(0.23,1,0.32,1);
+  --ease-out-expo: cubic-bezier(0.19,1,0.22,1);
+  --ease-out-circ: cubic-bezier(0.075,0.82,0.165,1);
+  --ease-in-out-quad: cubic-bezier(0.455,0.03,0.515,0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645,0.045,0.355,1);
+  --ease-in-out-quart: cubic-bezier(0.77,0,0.175,1);
+  --ease-in-out-quint: cubic-bezier(0.86,0,0.07,1);
+  --ease-in-out-expo: cubic-bezier(1,0,0,1);
+  --ease-in-out-circ: cubic-bezier(0.785,0.135,0.15,0.86);
+}
+
+/* Breakpoints */
+$breakpoint-small: 768px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1280px;
+$breakpoint-xlarge: 1440px;
+
+@font-face {
+  font-family: "Sequel100";
+  src: url("/assets/fonts/Sequel100.woff");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk-Variable.ttf");
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(0.25rem + 1em + 0.25rem);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+*:where(:not(fieldset, progress, meter)) {
+  border-width: 0;
+  border-style: solid;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
+html {
+  block-size: 100%;
+  -webkit-text-size-adjust: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  all: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Texts */
+body {
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  color: var(--theme-primary);
+  background-color: var(--theme-primary);
+  color-scheme: dark;
+  min-height: 100vh;
+  color: var(--theme-secondary  );
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-family-slab);
+  font-weight: var(--weight-bold);
+  line-height: 0.9;
+  color: var(--theme-secondary);
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+
+/* Animations */
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Utils */
+.flex-grow {
+  flex-grow: 1;
+}
