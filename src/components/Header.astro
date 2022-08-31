@@ -1,5 +1,25 @@
+---
+---
+<header>
+	<div class="inner">
+		<div class="first">
+			<a href="https://github.com/stupideveloper" class="nav_link">
+				Github
+			</a>
+	
+		</div>
+		<div class="center">
+			<a class={`nav_link logo_wrapper`} >
+				<div class="logo"></div>
+			</a>
+		</div>
+		
+		<div class="last"><a id="hello_link" class="nav_link"><p class="lg_text">Contact Me</p><p class="sm_text">Contact</p></a></div>
+	</div>
+</header>
 
-.header {
+<style>
+	header {
 	color: var(--theme-secondary);
 	position: sticky;
 	top: 0;
@@ -7,13 +27,13 @@
 	z-index: 99;
 }
 
-.inner {
+header > div {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	border-bottom: var(--border-small);
 	position: relative;
 }
-.inner > div {
+header > div > div {
 	flex: 1 1 0%;
 	align-items: center;
 	color: var(--light-grey);
@@ -58,6 +78,7 @@
 }
 .first > a {
 	justify-content: flex-start;
+
 }
 .center > a {
 	justify-content: center;
@@ -80,19 +101,25 @@
 
 }
 
+.sm_text {
+	display: none;
+	visibility: hidden;
+}
 
 @media screen and (max-width: 768px) {
-	.last {
-		display: none;
-		
-	}
-	.first {
-		grid-column: span 2;
-	}
+	.sm_text {
+	display: inline-block;
+	visibility: visible;
 }
+.lg_text {
+	display: none;
+	visibility: hidden;
+}
+} 
 
 /* Mobile Menu */
 .mobile_menu_button > svg {
 	width: 2rem;
 	height: 2rem;
 }
+</style>

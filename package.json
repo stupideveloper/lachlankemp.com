@@ -1,26 +1,21 @@
 {
-  "name": "testing-ground-next",
-  "version": "0.1.0",
+  "name": "@example/basics",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "^18.0.1",
-    "@types/react": "^18.0.14",
-    "framer-motion": "^6.3.16",
-    "next": "12.2.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.3.5",
-    "sass": "^1.53.0",
-    "typescript": "^4.7.4"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0"
+    "@astrojs/react": "^1.1.1",
+    "astro": "^1.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "framer-motion": "^7.2.1"
   }
 }
