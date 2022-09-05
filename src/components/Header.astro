@@ -1,9 +1,6 @@
 ---
 const current_time = new Date()
-const end_time = new Date()
-
-const epoch_hours_until = current_time.getTime() - end_time.getTime()
-const hours_until = current_time.getUTCHours() > 9 && current_time.getUTCHours() < 21 ? `Online in ${new Date(epoch_hours_until).getHours()}h` : 'Online'
+const hours_until = current_time.getUTCHours() > 9 && current_time.getUTCHours() < 21 ? `Online in ${21 - current_time.getUTCHours()}h` : 'Online'
 ---
 <header>
 	<div class="inner">
