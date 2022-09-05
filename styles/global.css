@@ -95,7 +95,7 @@
 * {
   margin: 0;
   padding: 0;
-  line-height: calc(0.25rem + 1em + 0.25rem);
+  line-height: 1;
 }
 
 *,
@@ -132,7 +132,6 @@ body {
   font-family: var(--font-family-body);
   font-size: 1rem;
   font-weight: var(--weight-regular);
-  line-height: 1.5;
   color: var(--theme-primary);
   background-color: var(--theme-primary);
   color-scheme: dark;
@@ -143,13 +142,14 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-family-slab);
   font-weight: var(--weight-bold);
-  line-height: 0.9;
   color: var(--theme-secondary);
+  line-height: 1;
 }
 
 h1 {
   text-transform: uppercase;
 }
+
 
 
 /* Animations */
@@ -162,7 +162,9 @@ h1 {
   }
 }
 
-
+p {
+  line-height: 1.4;
+}
 
 /* Utils */
 .flex-grow {

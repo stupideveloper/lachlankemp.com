@@ -1,4 +1,9 @@
 ---
+const current_time = new Date()
+const end_time = new Date()
+
+const epoch_hours_until = current_time.getTime() - end_time.getTime()
+const hours_until = current_time.getUTCHours() > 9 && current_time.getUTCHours() < 21 ? `Online in ${new Date(epoch_hours_until).getHours()}h` : 'Online'
 ---
 <header>
 	<div class="inner">
@@ -14,7 +19,7 @@
 			</a>
 		</div>
 		
-		<div class="last"><a href="me@lachlankemp.com" id="hello_link" class="nav_link"><p class="lg_text">Contact Me</p><p class="sm_text">Contact</p></a></div>
+		<div class="last"><a href="mailto:me@lachlankemp.com" id="hello_link" class="nav_link"><p class="lg_text">Contact Me</p><p class="sm_text">Contact</p><p class="online_readout">{hours_until}</p></a></div>
 	</div>
 </header>
 
@@ -117,9 +122,8 @@ header > div > div {
 }
 } 
 
-/* Mobile Menu */
-.mobile_menu_button > svg {
-	width: 2rem;
-	height: 2rem;
+.online_readout {
+	font-size: 0.6em;
+	padding-top: 0;
 }
 </style>
