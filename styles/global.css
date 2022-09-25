@@ -1,7 +1,7 @@
 :root {
-  --light: #f6f6f4;
+  --light: #fff;
   --light-transparent: hsla(60, 10%, 96%, 0.9);
-  --dark: #050a18;
+  --dark: #000;
   --dark-transparent: hsla(224, 66%, 6%, 0.9);
   --light-grey: #aaadbc;
   --light-grey-transparent: hsla(60,10%,96%,0);
