@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="lach.lan">
+	<main>
+		<div class="whole_wrap">
+			<div>
+				<Header />
+				<div class="inner_container">
+					<h1>Blender Basics - Building a clock</h1>
+					<p>An extention of a mundane engineering task.</p>
+					<div class="photo_container">
+						<img class="large_image" src="/assets/projects/blender/final-render.png" alt="" loading="lazy">
+						<img class="large_image" src="/assets/projects/blender/final-render2.png" alt="" loading="lazy">
+						<img class="large_image" src="/assets/projects/blender/final-render3.png" alt="" loading="lazy">
+						<img class="large_image" src="/assets/projects/blender/final-render4.png" alt="" loading="lazy">
+						<img class="large_image" src="/assets/projects/blender/final-render5.png" alt="" loading="lazy">
+						<video controls class="large_image" src="/assets/projects/blender/render1_final.mp4"></video>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+<style>
+	.inner_container {
+		padding: 1rem;
+	}
+	.large_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+	.photo_container {
+		margin-top: 2rem;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+</style>
