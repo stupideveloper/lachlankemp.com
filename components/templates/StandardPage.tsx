@@ -6,7 +6,7 @@ export default function StandardPage({url, image, description, title, children} 
 	return (
 		<div className="bg-slate-900">
 			<Head url={url} image={image} description={description} title={title} />
-			<div className={fullbleed.wrapper}>
+			<div className={`${fullbleed.wrapper} px-8`}>
 				<Header />
 			</div>
 			

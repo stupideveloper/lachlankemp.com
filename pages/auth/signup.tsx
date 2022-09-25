@@ -4,8 +4,7 @@ export default function SignUpPage() {
   return (
     <AuthWrapper authtype="signup">
       <Head url={"https://lachlankemp.com/auth/signup"} description={"Sign up to lachlankemp.com"} title={"Sign up"} />	
-				<h1 className="text-5xl font-black mb-6">Sign up</h1>
-		
+			<h1 className="text-5xl font-black mb-6">Sign up</h1>
     </AuthWrapper>
   );
 }

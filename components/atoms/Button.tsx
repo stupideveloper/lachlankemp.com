@@ -6,6 +6,8 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 	flavor?: "primary" | "secondary" | "ghost" | "danger";
 	isloading?: boolean;
 	showskeleton?: boolean;
+	as?: React.ElementType;
+	className?: string;
 }
 
 
@@ -23,23 +25,22 @@ function getClass(flavor) {
 			return styles.secondary;
 	} 
 }
-export default function Button({ flavor, isloading, children, showskeleton, ...props } : Props) {
+export default function Button({ flavor, isloading, showskeleton, as: Component = "button", children, className, ...props } : Props) {
 	const btnClass = getClass(flavor)
 	const skeletonLength = typeof children === 'string' ? children.length * 11 + 30 : 180;
-	
 	if (showskeleton) return (
-		<Skeleton width={skeletonLength} height={50} />
+		<Skeleton width={skeletonLength} height={50} className={className} />
 	)
 
 	return (
-		<button className={`${styles.btn} ${btnClass} ${isloading ? 'cursor-wait' : 'cursor-pointer'}`} {...props}>
+		<Component className={`${className ? className : ''} ${styles.btn} ${btnClass} ${isloading ? 'cursor-wait' : 'cursor-pointer'}`} {...props}>
 			{isloading && (
 				<Spinner />
 			)}
 			
-			<div className="">
+			<div>
 				{children}
 			</div>
-		</button>
+		</Component>
 	)
 }

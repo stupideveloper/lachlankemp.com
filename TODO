@@ -2,7 +2,7 @@
 
 [] Add profile image behind mine
 
-[] Redirect if logged in from signup/login to profile page
+[/] Redirect if logged in from signup/login to profile page
 
 [] add little icon to outbound links
 
@@ -10,19 +10,25 @@
 
 [] No-js warning
 
-[] Fix style blocking	
+[/] Fix style blocking	
 
-[] Auth loading states
+[/] Auth loading states
 
-[] Logout auth
+[/] Logout auth
 
-[] Automatic Redirects if authed
+[/] Automatic Redirects if authed
 
-[] Name inputs
+[/] Name input
 
-[] Github Login
+[/] Setup callbacks
 
-[] Setup callbacks
+[] Animate gradients on auth screens
+
+[] Add a logout screen
+
+[/] Redirect if logge in
+
+[] Havent set first name warning
 
 --- FUTURE ---
 [] Custom ui for Magic Auth

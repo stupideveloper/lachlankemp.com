@@ -1,17 +1,33 @@
-import Iron from '@hapi/iron'
-import CookieService from '../../../lib/cookie'
+/// <reference path="../../../lib/types/next-auth.d.ts"/>
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { getSession } from "next-auth/react"
+import prisma from "lib/prisma"
+import { DefaultSession } from "next-auth"
 
-export default async (req, res) => {
-  let user;
-  try {
-    user = await Iron.unseal(CookieService.getAuthToken(req.cookies), process.env.ENCRYPTION_SECRET, Iron.defaults)
-  } catch (error) {
-    res.status(401).end()
+async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+)  {
+  const session : DefaultSession = await getSession({ req })
+  if (req.method === "GET") {
+    if (session) {
+      // Signed in
+      return res.status(200).json(session)
+    } else {
+      // Not Signed in
+      return res.status(401).json({ message: "Not signed in" })
+    }
   }
-
-  // now we have access to the data inside of user
-  // and we could make database calls or just send back what we have
-  // in the token.
-
-  res.json(user)
+  if (req.method === "PATCH") {
+    const updateName = await prisma.user.update({
+      // @ts-ignore
+      where: { id: session.id },
+      data: {
+        name: req.body.name
+      }
+      
+    })
+    return res.status(200).json(updateName)
+  }
 }
+export default handler;

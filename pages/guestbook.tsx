@@ -94,7 +94,7 @@ export default function Guestbook() {
 					) : (
 						<div>
 							<p className="mb-2">To share a message to a future viewer of my site, please login with GitHub.</p>
-							<Button onClick={()=>{router.replace('/auth/sign-in?callback=/guestbook')}} flavor="primary">Sign in</Button>
+							<Button onClick={()=>{router.push('/auth/sign-in?callback=/guestbook')}} flavor="primary">Sign in</Button>
 							<p className='text-sm text-slate-400 mt-2 '>Your information will only be used to display your name and reply by email. No mailing list, I promise.</p>
 						</div>
 					)

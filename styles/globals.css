@@ -37,7 +37,7 @@ h1 {
     @apply font-body;
   }
   h1 {
-    @apply text-slate-100 font-display tracking-extra font-bold; 
+    @apply text-slate-100 font-display tracking-extra text-5xl font-black; 
     
   }
   h2 {
@@ -47,7 +47,7 @@ h1 {
     @apply text-light
   }
   input {
-    @apply text-light py-3 px-4 w-full hover:border-slate-500  border-2 border-slate-600 bg-slate-700 hover:outline-offset-2 hover:outline outline-slate-600 transition-all rounded-lg !important; 
+    @apply text-light py-3 px-4 w-full hover:border-slate-500  border-2 border-slate-600 bg-slate-700 hover:outline-offset-2 hover:outline outline-slate-600 transition-all rounded-lg disabled:text-slate-400 disabled:cursor-not-allowed ; 
   }
   select {
     @apply bg-slate-800 rounded-lg
